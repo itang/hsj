@@ -24,7 +24,7 @@ task :build => %w[main]
 
 desc 'run'
 task :run => %w[build] do
-  sh './main'
+  sh 'PORT=8080 ./main'
 end
 
 desc 'clean'

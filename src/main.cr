@@ -7,7 +7,8 @@ require "./haoshuju/app"
 include Haoshuju
 
 WD = Dir.working_directory
-puts "work dir: #{WD}"
+PORT = ENV.has_key?("PORT") ? ENV["PORT"].to_i : 3000
+puts "work dir: #{WD}, port: #{PORT}"
 
 app = HaoshujuApp.new(WD)
-app.serve 3000
+app.serve PORT
