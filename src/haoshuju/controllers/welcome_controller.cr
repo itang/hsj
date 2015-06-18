@@ -13,13 +13,15 @@ module Haoshuju
       actions :index, :hello
 
       @weibos = WeiboService.new
+      @keywords = KeywordService.new
 
-      view "index", "#{__DIR__}/../views/welcome", name, weibos
+      view "index", "#{__DIR__}/../views/welcome", name, weibos, keywords
       def index
         name = "Itang"
         weibos = @weibos.find_weibos
+        keywords = @keywords.find_keywords
         respond_to do |format|
-          format.html { render "index", name, weibos.to_a}
+          format.html { render "index", name, weibos.to_a, keywords.to_a }
         end
       end
 

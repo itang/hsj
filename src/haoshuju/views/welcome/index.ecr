@@ -13,6 +13,11 @@
 <body>
   <h1>Haoshuju</h1>
   <p>Hello, <%= @name %></p>
+  <ul>
+  <% @keywords.map do |keyword| %>
+    <li><%= keyword.content %> (<%= keyword.hots %>)</li>
+  <% end %>
+  </ul>
   <table>
     <% @weibos.map do |weibo| %>
     <tr><td><%= weibo.name %></td><td><%= weibo.content %></td></tr>
