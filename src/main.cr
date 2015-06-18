@@ -12,8 +12,8 @@ RUN_MODE = ENV.has_key?("RUN_MODE") ? ENV["RUN_MODE"] : "production" # developme
 APPPATH = File.expand_path($0)
 puts "$0: #{$0}, app_path: #{APPPATH}, work dir: #{WD}, port: #{PORT}, run mode: #{RUN_MODE}"
 
-Base::Config.configure do |instance|
-  instance.environment = RUN_MODE
+App.settings.configure do |conf|
+  conf.environment = RUN_MODE
 end
 
 app = HaoshujuApp.new(APPPATH)
