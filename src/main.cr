@@ -14,7 +14,14 @@ puts "$0: #{$0}, app_path: #{APPPATH}, work dir: #{WD}, port: #{PORT}, run mode:
 
 App.settings.configure do |conf|
   conf.environment = RUN_MODE
+  conf.static_dirs = ["/assets"]
 end
 
-app = HaoshujuApp.new(APPPATH)
+app = HaoshujuApp.new(WD)
+
+puts "app_dir: #{App.settings.app_dir}"
+puts "environment: #{App.settings.environment}"
+puts "namespace: #{App.settings.namespace}"
+puts "static_dirs: #{App.settings.static_dirs}"
+
 app.serve PORT
