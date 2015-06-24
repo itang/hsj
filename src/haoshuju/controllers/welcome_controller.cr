@@ -10,7 +10,7 @@ include Haoshuju::Models
 module Haoshuju
   module Controllers
     class WelcomeController < Base::Controller
-      actions :index, :hello
+      actions :index, :hello, :test
 
       @@weiboService = WeiboService.new
       @@keywordService = KeywordService.new
@@ -30,6 +30,11 @@ module Haoshuju
 
       def hello
         html "<h1>Hello, world! Haoshuju #{Time.now} : #{Haoshuju::VERSION}"
+      end
+
+      def test
+        sleep 1
+        html "hello"
       end
     end
   end

@@ -3,6 +3,7 @@
 ##
 require "amethyst"
 require "./haoshuju/app"
+require "./haoshuju/middlewares"
 
 include Haoshuju
 
@@ -16,6 +17,8 @@ App.settings.configure do |conf|
   conf.environment = RUN_MODE
   conf.static_dirs = ["/assets"]
 end
+
+App.use Middlewares::XRuntimeMiddleware
 
 app = HaoshujuApp.new(WD)
 
