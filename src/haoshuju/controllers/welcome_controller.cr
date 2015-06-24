@@ -12,16 +12,19 @@ module Haoshuju
     class WelcomeController < Base::Controller
       actions :index, :hello
 
-      @weibos = WeiboService.new
-      @keywords = KeywordService.new
+      @@weiboService = WeiboService.new
+      @@keywordService = KeywordService.new
 
-      view "index", "#{__DIR__}/../views/welcome", name, weibos, keywords
+      @weibos = [] of Weibo
+      @keywords = [] of Keyword
+
+      view "index", "#{__DIR__}/../views/welcome"
       def index
-        name = "Itang"
-        weibos = @weibos.find_weibos
-        keywords = @keywords.find_keywords
+        @name = "Itang"
+        @weibos = @@weiboService.find_weibos.to_a
+        @keywords = @@keywordService.find_keywords.to_a
         respond_to do |format|
-          format.html { render "index", name, weibos.to_a, keywords.to_a }
+          format.html { render "index" }
         end
       end
 
