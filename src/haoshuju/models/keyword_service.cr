@@ -15,6 +15,10 @@ class KeywordService
      Keyword.new("itang", "Kafka", 98),
      Keyword.new("itang", "Spark", 97),
      Keyword.new("itang", "Cassandra", 96),
-     Keyword.new("itang", "Mesos", 95)]
+     Keyword.new("itang", "Mesos", 95),
+     Keyword.new("itang", "Docker", 94),
+     Keyword.new("itang", "OpenStack", 95),
+     Keyword.new("itang", "Hadoop", 94),
+     Keyword.new("itang", "Crystal", 93)]
   end
 end
