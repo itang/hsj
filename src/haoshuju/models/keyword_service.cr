@@ -1,6 +1,6 @@
 class Keyword
   property name, content, hots
-  def initialize(@name : String, @content : String, @hots : Int)
+  def initialize(@name: String, @content: String, @hots=0: Int)
   end
 end
 
@@ -19,6 +19,7 @@ class KeywordService
      Keyword.new("itang", "Docker", 94),
      Keyword.new("itang", "OpenStack", 95),
      Keyword.new("itang", "Hadoop", 94),
-     Keyword.new("itang", "Crystal", 93)]
+     Keyword.new("itang", "Crystal", 93),
+     Keyword.new("itang", "Elasticsearch")]
   end
 end
