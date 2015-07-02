@@ -4,3 +4,5 @@ libs/
 main
 
 .deps.lock
+
+app.pid

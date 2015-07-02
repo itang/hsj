@@ -4,6 +4,7 @@
 require "amethyst"
 require "./haoshuju/app"
 require "./haoshuju/middlewares"
+require "./haoshuju/utils"
 
 include Haoshuju
 
@@ -26,5 +27,7 @@ puts "app_dir: #{App.settings.app_dir}"
 puts "environment: #{App.settings.environment}"
 puts "namespace: #{App.settings.namespace}"
 puts "static_dirs: #{App.settings.static_dirs}"
+
+Util::Pids.new.write_file!
 
 app.serve PORT
