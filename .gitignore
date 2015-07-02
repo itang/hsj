@@ -6,3 +6,4 @@ main
 .deps.lock
 
 app.pid
+logs/
