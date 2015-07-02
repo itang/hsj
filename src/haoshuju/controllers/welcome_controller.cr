@@ -2,14 +2,13 @@
 # Controllers.
 ##
 require "amethyst/all"
-require "./../version"
 require "./../models"
 
 include Haoshuju::Models
 
 module Haoshuju
   module Controllers
-    class WelcomeController < Base::Controller
+    class WelcomeController < BaseController
       actions :index, :hello, :test
 
       @@weiboService = WeiboService.new

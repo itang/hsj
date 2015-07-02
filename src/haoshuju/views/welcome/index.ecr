@@ -12,6 +12,7 @@
 </head>
 <body>
   <h1>Haoshuju</h1>
+  <hr/>
   <p>Hello, <%= name %></p>
   <ul>
   <% keywords.map do |keyword| %>
@@ -24,5 +25,9 @@
     <% end %>
   </table>
   <script src="/assets/js/main.js"></script>
+  <footer>
+    <hr/>
+    <div><%= version %></div>
+  </footer>
 </body>
 </html>
