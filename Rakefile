@@ -17,6 +17,7 @@ end
 file :main => (Dir["src/**/*.cr"] + Dir["src/**/*.ecr"]) do |t|
   puts "#{t.name} #{t.prerequisites.join(' ')}"
   sh 'crystal build --release src/main.cr'
+  File.write ".build", "#{Time.now}"
 end
 
 desc 'build'

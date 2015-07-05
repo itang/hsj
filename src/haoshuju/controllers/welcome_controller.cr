@@ -25,6 +25,7 @@ module Haoshuju
         @weibos = @@weiboService.find_weibos
         @keywords = @@keywordService.find_keywords
         @languages = @@languageService.find_languages
+        @build_time = get_build_time
 
         respond_to do |format|
           format.html { render "index" }
@@ -38,6 +39,11 @@ module Haoshuju
       def test
         sleep 1
         html "hello"
+      end
+
+      private def get_build_time
+        file = ".build"
+        File.exists?(file) ? File.read(file) : "Unknown"
       end
     end
   end
