@@ -6,7 +6,7 @@ end
 
 class WeiboService
   def find_weibos_by_name(name)
-    find_weibos.each.select { |x| x.name == name }.to_a
+    find_weibos.each.select { |x| x.name == name }
   end
 
   def find_weibos

@@ -17,13 +17,14 @@ module Haoshuju
 
       @weibos = [] of Weibo
       @keywords = [] of Keyword
+      @languages = Array(Language).new
 
       view "index", "#{__DIR__}/../views/welcome"
       def index
         @name = "Itang"
-        @weibos = @@weiboService.find_weibos.to_a
-        @keywords = @@keywordService.find_keywords.to_a
-        @languages = @@languageService.find_languages.to_a
+        @weibos = @@weiboService.find_weibos
+        @keywords = @@keywordService.find_keywords
+        @languages = @@languageService.find_languages
 
         respond_to do |format|
           format.html { render "index" }

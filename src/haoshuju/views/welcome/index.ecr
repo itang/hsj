@@ -22,7 +22,7 @@
   </ul>
   <h2>语言喜好榜</h2>
   <table>
-    <% languages.not_nil!.map do |lang| %>
+    <% languages.map do |lang| %>
       <tr><td><%= lang.name %></td><td><a href="<%= lang.url %>" target="_blank"><%= lang.url %></a></td></tr>
     <% end %>
   </table>
