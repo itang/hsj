@@ -7,7 +7,7 @@ end
 class LanguageService
   def find_languages
     [Language.new("Scala", url = "http://www.scala-lang.org"),
-    Language.new("Ruby", url = "http://www.ruby.org"),
+    Language.new("Ruby", url = "http://www.ruby-lang.org"),
     Language.new("Crystal", url = "http://www.crystal-lang.org"),
     Language.new("Rust", url = "http://www.rust-lang.org"),
     Language.new("Elixir", url = "http://www.elixir-lang.org")]
