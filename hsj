@@ -24,9 +24,15 @@ function usage() {
   echo "hsj start|stop|restart"
 }
 
+function rebuild() {
+  rake build
+}
+
 case $1 in
   start) start;;
   stop) stop;;
   restart) stop && start;;
+  rebuild) rebuild;;
+  rerun) rebuild; stop && start;;
   *) usage;;
 esac
