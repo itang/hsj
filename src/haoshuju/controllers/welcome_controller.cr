@@ -13,6 +13,7 @@ module Haoshuju
 
       @@weiboService = WeiboService.new
       @@keywordService = KeywordService.new
+      @@languageService = LanguageService.new
 
       @weibos = [] of Weibo
       @keywords = [] of Keyword
@@ -22,6 +23,8 @@ module Haoshuju
         @name = "Itang"
         @weibos = @@weiboService.find_weibos.to_a
         @keywords = @@keywordService.find_keywords.to_a
+        @languages = @@languageService.find_languages.to_a
+
         respond_to do |format|
           format.html { render "index" }
         end
