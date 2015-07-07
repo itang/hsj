@@ -14,10 +14,12 @@ module Haoshuju
       @@weiboService = WeiboService.new
       @@keywordService = KeywordService.new
       @@languageService = LanguageService.new
+      @@readService = ReadService.new
 
       @weibos = [] of Weibo
       @keywords = [] of Keyword
       @languages = Array(Language).new
+      @reads = [] of Read
 
       view "index", "#{__DIR__}/../views/welcome"
       def index
@@ -25,6 +27,7 @@ module Haoshuju
         @weibos = @@weiboService.find_weibos
         @keywords = @@keywordService.find_keywords
         @languages = @@languageService.find_languages
+        @reads = @@readService.find_reads
         @build_time = get_build_time
 
         respond_to do |format|

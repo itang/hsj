@@ -23,7 +23,21 @@
   <h2>语言喜好榜</h2>
   <table>
     <% languages.map do |lang| %>
-      <tr><td><%= lang.name %></td><td><a href="<%= lang.url %>" target="_blank"><%= lang.url %></a></td></tr>
+      <tr>
+        <td><%= lang.name %></td>
+        <td><a href="<%= lang.url %>" target="_blank"><%= lang.url %></a></td>
+      </tr>
+    <% end %>
+  </table>
+  <h2>待读</h2>
+  <table>
+    <% reads.map do |read| %>
+    <tr>
+      <td><%= read.title %></td>
+      <td><a href="<%= read.url %>" target="_blank"><%= read.url %></a></td>
+      <td><%= read.status %></td>
+      <td><%= read.created_at %></td>
+    </tr>
     <% end %>
   </table>
   <h2>共鸣语录</h2>
