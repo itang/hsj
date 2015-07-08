@@ -11,7 +11,9 @@ module Haoshuju
     routes.draw do
       all "/",      "welcome#index"
       get "/hello", "welcome#hello"
-      get "/test", "welcome#test"
+      get "/test",  "welcome#test"
+      get "/_migrate", "welcome#migrate"
+
       register WelcomeController
     end
   end

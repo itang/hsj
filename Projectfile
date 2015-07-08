@@ -3,4 +3,5 @@ deps do
   # github "ysbaddaden/minitest.cr"
   github "spalger/crystal-mime"
   github "Codcore/amethyst"
+  github "manastech/crystal-sqlite3"
 end

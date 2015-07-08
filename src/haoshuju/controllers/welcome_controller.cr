@@ -9,17 +9,19 @@ include Haoshuju::Models
 module Haoshuju
   module Controllers
     class WelcomeController < BaseController
-      actions :index, :hello, :test
+      actions :index, :hello, :test, :migrate
 
       @@weiboService = WeiboService.new
       @@keywordService = KeywordService.new
       @@languageService = LanguageService.new
       @@readService = ReadService.new
+      @@dict_service = DictService.new
 
       @weibos = [] of Weibo
       @keywords = [] of Keyword
       @languages = Array(Language).new
       @reads = [] of Read
+      @dicts = [] of Dict
 
       view "index", "#{__DIR__}/../views/welcome"
       def index
@@ -29,6 +31,7 @@ module Haoshuju
         @languages = @@languageService.find_languages
         @reads = @@readService.find_reads
         @build_time = get_build_time
+        @dicts = @@dict_service.find_all
 
         respond_to do |format|
           format.html { render "index" }
@@ -42,6 +45,22 @@ module Haoshuju
       def test
         sleep 1
         html "hello"
+      end
+
+      def migrate
+        with_db do |db|
+          puts "INFO: #{DictTable.ddl_sql}"
+          DictTable.ddl_sql.each do |x|
+            db.execute(x)
+          end
+
+          puts "INFO: #{DictTable.init_data_sql}"
+          DictTable.init_data_sql.each do |x|
+            db.execute(x)
+          end
+        end
+
+        html("finish")
       end
 
       private def get_build_time

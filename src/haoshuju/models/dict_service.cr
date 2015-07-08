@@ -1,0 +1,84 @@
+class Dict
+  property id, from, to, from_lang, to_lang, created_at, times
+
+  def initialize
+  end
+
+  def initialize(@id: Int64, @from: String, @to: String, @from_lang="en": String, @to_lang="cn": String, @created_at="": String, @times=1: Int32)
+  end
+end
+
+module DictTable
+  extend self
+
+  def table_name
+    "dicts"
+  end
+
+  def ddl_sql
+    ["drop table if exists #{table_name}",
+    "create table #{table_name}(
+      `id` INTEGER PRIMARY KEY ASC,
+      `from` VARCHAR(255) not null,
+      `to` varchar(1000) not null,
+      `from_lang` varchar(20) not null,
+      `to_lang` varchar(20) not null,
+      `created_at` varchar(30) not null,
+      `times` integer default 0
+    )"]
+  end
+
+  def init_data
+    dict1 = Dict.new 1_i64, "hello", "int. 喂；哈罗", created_at: "2015-07-08 14:58:01"
+    dict2 = Dict.new 2_i64, "world", "n. 世界；领域；宇宙；世俗；全人类；物质生活", created_at: "2015-07-08 14:58:02"
+    [dict1, dict2]
+  end
+
+  def init_data_sql
+    init_data.map {|x| as_insert_sql(x)}
+  end
+
+  private def as_insert_sql(dict: Dict)
+    "insert into #{table_name}(`id`, `from`, `to`, `from_lang`, `to_lang`, `created_at`, `times`) values (#{dict.id}, '#{dict.from}', '#{dict.to}', '#{dict.from_lang}', '#{dict.to_lang}', '#{dict.created_at}', #{dict.times})"
+  end
+end
+
+class DictService
+  def save(dict: Dict)
+
+  end
+
+  def delete(dict: Dict)
+  end
+
+  def delete(id: Int32)
+  end
+
+  def find_by_id(id: Int32)
+
+  end
+
+  def find_all
+    with_db do |db|
+      db.query("select * from #{DictTable.table_name}").map {|x| row_mapper(x) }
+    end
+  end
+
+  private def row_mapper(rs)
+    Dict.new.tap do |d|
+      d.id = t(rs["id"], Int64)
+      d.from = rs["from"].to_s
+      d.to = rs["to"].to_s
+      d.from_lang = rs["from_lang"].to_s
+      d.to_lang = rs["to_lang"].to_s
+      d.created_at = rs["created_at"].to_s
+      d.times = t(rs["times"], Int64)
+    end
+  end
+
+  private def t(v, type: T.class) :T
+    if v.is_a?(T)
+      v
+    end
+  end
+end
