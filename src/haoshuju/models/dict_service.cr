@@ -67,18 +67,13 @@ class DictService
   private def row_mapper(rs)
     Dict.new.tap do |d|
       d.id = t(rs["id"], Int64)
-      d.from = rs["from"].to_s
-      d.to = rs["to"].to_s
-      d.from_lang = rs["from_lang"].to_s
-      d.to_lang = rs["to_lang"].to_s
-      d.created_at = rs["created_at"].to_s
+      d.from = t(rs["from"], String)
+      d.to = t(rs["to"], String)
+      d.from_lang = t(rs["from_lang"], String)
+      d.to_lang = t(rs["to_lang"], String)
+      d.created_at = t(rs["created_at"], String)
       d.times = t(rs["times"], Int64)
     end
   end
 
-  private def t(v, type: T.class) :T
-    if v.is_a?(T)
-      v
-    end
-  end
 end
