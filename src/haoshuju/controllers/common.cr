@@ -1,13 +1,5 @@
-##
-# Controllers.
-##
-require "amethyst/all"
-require "./../version"
+require "../version"
 
-module Haoshuju
-  module Controllers
-    class BaseController < Base::Controller
-      @version = Haoshuju::VERSION
-    end
-  end
+class BaseController < Base::Controller
+  @version = Haoshuju::VERSION
 end

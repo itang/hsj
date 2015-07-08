@@ -4,7 +4,7 @@ class Dict
   def initialize
   end
 
-  def initialize(@id: Int64, @from: String, @to: String, @from_lang="en": String, @to_lang="cn": String, @created_at="": String, @times=1: Int32)
+  def initialize(@from: String, @to: String, @from_lang="en": String, @to_lang="cn": String, @created_at="": String, @times=1: Int32)
   end
 end
 
@@ -18,7 +18,7 @@ module DictTable
   def ddl_sql
     ["drop table if exists #{table_name}",
     "create table #{table_name}(
-      `id` INTEGER PRIMARY KEY ASC,
+      `id` INTEGER PRIMARY KEY AUTOINCREMENT,
       `from` VARCHAR(255) not null,
       `to` varchar(1000) not null,
       `from_lang` varchar(20) not null,
@@ -29,8 +29,8 @@ module DictTable
   end
 
   def init_data
-    dict1 = Dict.new 1_i64, "hello", "int. 喂；哈罗", created_at: "2015-07-08 14:58:01"
-    dict2 = Dict.new 2_i64, "world", "n. 世界；领域；宇宙；世俗；全人类；物质生活", created_at: "2015-07-08 14:58:02"
+    dict1 = Dict.new "hello", "int. 喂；哈罗", created_at: "2015-07-08 14:58:01"
+    dict2 = Dict.new "world", "n. 世界；领域；宇宙；世俗；全人类；物质生活", created_at: "2015-07-08 14:58:02"
     [dict1, dict2]
   end
 
@@ -38,14 +38,14 @@ module DictTable
     init_data.map {|x| as_insert_sql(x)}
   end
 
-  private def as_insert_sql(dict: Dict)
-    "insert into #{table_name}(`id`, `from`, `to`, `from_lang`, `to_lang`, `created_at`, `times`) values (#{dict.id}, '#{dict.from}', '#{dict.to}', '#{dict.from_lang}', '#{dict.to_lang}', '#{dict.created_at}', #{dict.times})"
+  def as_insert_sql(dict: Dict)
+    "insert into #{table_name}(`from`, `to`, `from_lang`, `to_lang`, `created_at`, `times`) values ('#{dict.from}', '#{dict.to}', '#{dict.from_lang}', '#{dict.to_lang}', '#{dict.created_at}', #{dict.times})"
   end
 end
 
 class DictService
   def save(dict: Dict)
-
+    with_db(&.execute(DictTable.as_insert_sql(dict)))
   end
 
   def delete(dict: Dict)
