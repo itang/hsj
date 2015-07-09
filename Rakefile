@@ -32,3 +32,8 @@ desc 'clean'
 task :clean do
   sh 'rm main'
 end
+
+desc 'mock'
+task :mock do
+  sh %q(crul post http://localhost:3000/dict -d '{"from":"hello","to":"nihao"}')
+end

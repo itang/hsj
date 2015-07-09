@@ -1,7 +1,7 @@
 require "json"
 
 class WelcomeController < BaseController
-  actions :index, :hello, :test, :migrate, :add_dict!
+  actions :index, :migrate, :add_dict!
 
   @@weiboService = WeiboService.new
   @@keywordService = KeywordService.new
@@ -47,15 +47,6 @@ class WelcomeController < BaseController
     end
 
     html "ok"
-  end
-
-  def hello
-    html "<h1>Hello, world! Haoshuju #{Time.now} : #{Haoshuju::VERSION}"
-  end
-
-  def test
-    sleep 1
-    html "hello"
   end
 
   def migrate
