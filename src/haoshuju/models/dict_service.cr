@@ -60,7 +60,7 @@ class DictService
 
   def find_all
     with_db do |db|
-      db.query("select * from #{DictTable.table_name}").map {|x| row_mapper(x) }
+      db.query("select * from #{DictTable.table_name} order by id desc").map {|x| row_mapper(x) }
     end
   end
 
