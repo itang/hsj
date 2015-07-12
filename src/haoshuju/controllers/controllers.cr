@@ -1,3 +1,4 @@
+require "json"
 require "amethyst/all"
 require "./../models"
 require "../version"
@@ -6,8 +7,19 @@ include Haoshuju::Models
 
 module Haoshuju
   module Controllers
-    class BaseController < Base::Controller
+    abstract class BaseController < Base::Controller
       @version = Haoshuju::VERSION
+
+      def initialize
+        super
+        puts "DEBUG: BaseController initialize"
+      end
+
+      def request_body_as_json
+        if body = request.body
+          JSON.parse body
+        end
+      end
     end
 
     require "./*"

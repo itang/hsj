@@ -10,13 +10,12 @@ module Haoshuju
   class HaoshujuApp < Base::App
     routes.draw do
       all "/",      "welcome#index"
-      post "/dict", "welcome#add_dict!"
-      get "/_migrate", "welcome#migrate"
-
-      get "/test", "dict#add_dict!"
+      post "/dict", "dict#add_dict!"
+      get "/_migrate", "tool#migrate!"
 
       register WelcomeController
-      #register TestController
+      register DictController
+      register ToolController
     end
   end
 end
