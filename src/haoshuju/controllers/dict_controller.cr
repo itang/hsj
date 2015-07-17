@@ -11,7 +11,7 @@ class DictController < BaseController
     m = request_body_as_json
     if dict = (Dict.new(m["from"].to_s, m["to"].to_s) if m.is_a?(Hash))
       dict.created_at = Time.now.to_s
-      @@dict_service.save(dict)
+      @@dict_service.save!(dict)
     end
     html "ok"
   rescue ex: Exception

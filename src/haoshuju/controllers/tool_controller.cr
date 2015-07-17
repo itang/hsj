@@ -1,17 +1,14 @@
 class ToolController < BaseController
   actions :migrate!
 
+  @@dict_service = DictService.new
   def migrate!
     with_db do |db|
-      puts "INFO: #{DictTable.ddl_sql}"
-      DictTable.ddl_sql.each do |x|
-        db.execute(x)
-      end
+      puts "INFO: #{@@dict_service.ddl_sql}"
+      @@dict_service.auto_ddl!
 
-      puts "INFO: #{DictTable.init_data_sql}"
-      DictTable.init_data_sql.each do |x|
-        db.execute(x)
-      end
+      puts "INFO: init data"
+      @@dict_service.init_data!
     end
 
     html("finish")

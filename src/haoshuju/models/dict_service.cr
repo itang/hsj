@@ -8,9 +8,7 @@ class Dict
   end
 end
 
-module DictTable
-  extend self
-
+class DictDAO < CrudRepository(Dict)
   def table_name
     "dicts"
   end
@@ -28,43 +26,15 @@ module DictTable
     )"]
   end
 
-  def init_data
-    dict1 = Dict.new "hello", "int. 喂；哈罗", created_at: "2015-07-08 14:58:01"
-    dict2 = Dict.new "world", "n. 世界；领域；宇宙；世俗；全人类；物质生活", created_at: "2015-07-08 14:58:02"
-    [dict1, dict2]
-  end
-
-  def init_data_sql
-    init_data.map {|x| as_insert_sql(x)}
-  end
-
-  def as_insert_sql(dict: Dict)
-    "insert into #{table_name}(`from`, `to`, `from_lang`, `to_lang`, `created_at`, `times`) values ('#{dict.from}', '#{dict.to}', '#{dict.from_lang}', '#{dict.to_lang}', '#{dict.created_at}', #{dict.times})"
-  end
-end
-
-class DictService
-  def save(dict: Dict)
-    with_db(&.execute(DictTable.as_insert_sql(dict)))
-  end
-
-  def delete(dict: Dict)
-  end
-
-  def delete(id: Int32)
-  end
-
-  def find_by_id(id: Int32)
-
-  end
-
-  def find_all
+  def auto_ddl!
     with_db do |db|
-      db.query("select * from #{DictTable.table_name} order by id desc").map {|x| row_mapper(x) }
+      ddl_sql.each do |x|
+        db.execute(x)
+      end
     end
   end
 
-  private def row_mapper(rs)
+ def row_mapper(rs)
     Dict.new.tap do |d|
       d.id = t(rs["id"], Int64)
       d.from = t(rs["from"], String)
@@ -75,5 +45,26 @@ class DictService
       d.times = t(rs["times"], Int64)
     end
   end
+
+  def unapply(dict)
+     [{"id", dict.id},
+     {"from", dict.from},
+     {"to", dict.to},
+     {"from_lang", dict.from_lang},
+     {"to_lang", dict.to_lang},
+     {"created_at", dict.created_at},
+     {"times", dict.times}]
+   end
+
+  def init_data!
+    dict1 = Dict.new "hello", "int. 喂；哈罗", created_at: "2015-07-08 14:58:01"
+    dict2 = Dict.new "world", "n. 世界；领域；宇宙；世俗；全人类；物质生活", created_at: "2015-07-08 14:58:02"
+    [dict1, dict2].each do |x|
+      save!(x)
+    end
+  end
+end
+
+class DictService < DictDAO
 
 end
