@@ -35,6 +35,10 @@ class ReadService
               title: "JSON API 1.0 核心开发者自述",
               created_at: "2015-07-17 10:03"
 
+    read6 = Read.new "http://blog.scalac.io/2015/07/09/slick-3-overview.html",
+              title: "A Quick Overview of Slick 3.0",
+              created_at: "2015-07-17 10:18"
+
     [read1, read2, read3, read4, read5].reverse
   end
 end
