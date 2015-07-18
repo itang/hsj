@@ -3,8 +3,14 @@ class DictController < BaseController
 
   @@dict_service = DictService.new
 
+  @dicts = [] of Dict
+
+  view "index", "#{__DIR__}/../views/dict"
   def index
-    html "dict index"
+    @dicts = @@dict_service.find_all
+    respond_to do |format|
+      format.html { render "index" }
+    end
   end
 
   def add_dict!

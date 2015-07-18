@@ -1,4 +1,7 @@
 require "sqlite3"
+require "../data"
+
+include Haoshuju::Libs::Data
 
 module Haoshuju
   module Libs
@@ -97,6 +100,29 @@ module Haoshuju
             db.query("select * from #{table_name} order by id desc")
               .map {|x| row_mapper(x) }
           end
+        end
+
+        private def pager_to_sql(pager)
+          "ORDER BY #{pager.sorter.sort} #{pager.sorter.dir} LIMIT #{pager.starts}, #{pager.size}"
+        end
+
+        def find_page(pager: Pager): Page
+          total = count()
+          items = find_by_sql("select * from #{table_name} #{pager_to_sql(pager)}").map {|x| row_mapper(x) }
+          Page.new(total, items, pager)
+        end
+
+        def count(): Int64
+          total =  find_by_sql("select count(*) as total FROM #{table_name}").map {|x| x["total"] }.first?
+          total = if total
+                    t(total, Int64).not_nil!
+                  else
+                    0_i64
+                  end
+        end
+
+        private def find_by_sql(sql)
+          with_db(&.query(sql))
         end
 
         private def id_name

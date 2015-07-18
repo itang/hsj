@@ -11,7 +11,7 @@ class WelcomeController < BaseController
   @keywords = [] of Keyword
   @languages = Array(Language).new
   @reads = [] of Read
-  @dicts = [] of Dict
+  @dicts = Page.new(0_i64, [] of Dict, Pager.new)
 
   view "index", "#{__DIR__}/../views/welcome"
   def index
@@ -21,7 +21,7 @@ class WelcomeController < BaseController
     @languages = @@language_service.find_languages
     @reads = @@read_service.find_reads
     @build_time = get_build_time
-    @dicts = @@dict_service.find_all
+    @dicts = @@dict_service.find_page(Pager.new())
 
     respond_to do |format|
       format.html { render "index" }
