@@ -41,7 +41,8 @@ class ReadService
 
     read7 = Read.new "https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md",
               title: "命令行的艺术",
-              created_at: "2015-07-18 01:00"
+              created_at: "2015-07-18 01:00",
+              status: ReadStatus::Readed
 
     [read1, read2, read3, read4, read5, read6, read7].reverse
   end
