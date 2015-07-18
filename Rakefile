@@ -20,17 +20,31 @@ file :main => (Dir["src/**/*.cr"] + Dir["src/**/*.ecr"]) do |t|
   File.write ".build", "#{Time.now}"
 end
 
+file :main_dev => (Dir["src/**/*.cr"] + Dir["src/**/*.ecr"]) do |t|
+  puts "#{t.name} #{t.prerequisites.join(' ')}"
+  sh 'crystal build src/main.cr -o main_dev'
+  File.write ".build", "#{Time.now}"
+end
+
 desc 'build'
 task :build => %w[main]
 
+desc 'build dev'
+task :build_dev => %w[main_dev]
+
 desc 'run'
-task :run => %w[build] do
-  sh 'RUN_MODE=development ./main'
+task :run => %w[build_dev] do
+  sh 'RUN_MODE=development ./main_dev'
+end
+
+desc 'start'
+task :start => %w[build] do
+  sh './main'
 end
 
 desc 'clean'
 task :clean do
-  sh 'rm main'
+  sh 'rm main*'
 end
 
 desc 'mock'

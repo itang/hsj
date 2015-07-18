@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
   <title>Haoshuju.net</title>
+  <link href="http://cdn.staticfile.org/semantic-ui/0.19.3/css/semantic.min.css" rel="stylesheet">
   <link href="/assets/css/main.css" rel="stylesheet">
 </head>
-<body>
+<body
+<div class="ui container">
   <h1>Haoshuju</h1>
   <hr/>
-  <p>Hello, <%= name %></p>
-  <h2>热捧技术</h2>
-  <ul>
-  <% keywords.map do |keyword| %>
-    <li><%= keyword.content %>(<%= keyword.hots %>)</li>
-  <% end %>
-  </ul>
-  <h2>语言喜好榜</h2>
-  <table>
-    <% languages.map do |lang| %>
-      <tr>
-        <td><%= lang.name %></td>
-        <td><a href="<%= lang.url %>" target="_blank"><%= lang.url %></a></td>
-      </tr>
-    <% end %>
-  </table>
+  <div class="ui two column stackable grid">
+    <div class="two column row">
+        <div class="column">
+          <div class="ui stackable doubling two column grid">
+            <div class="column">
+              <div class="ui segment">
+                <h2>热捧技术</h2>
+                <ul>
+                <% keywords.map do |keyword| %>
+                  <li><%= keyword.content %>(<%= keyword.hots %>)</li>
+                <% end %>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui segment">
+                <h2>语言喜好榜</h2>
+                <table>
+                  <% languages.map do |lang| %>
+                    <tr>
+                      <td><%= lang.name %></td>
+                      <td><a href="<%= lang.url %>" target="_blank"><%= lang.url %></a></td>
+                    </tr>
+                  <% end %>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+        <div class="ui stackable doubling one column grid">
+
+        <div class="column">
+          <div class="ui segment">
+            <h2>最新翻译</h2>
+            <a href="/dicts" target="_blank">更多</a>
+            <table>
+              <% dicts.items.map do |dict| %>
+              <tr><td><%= dict.from %></td><td><%= dict.to %></td><td><%= dict.created_at %></td></tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+  </div>
+
   <h2>待读</h2>
   <table>
     <% reads.map do |read| %>
@@ -46,17 +80,13 @@
     <tr><td><%= weibo.name %></td><td><%= weibo.content %></td></tr>
     <% end %>
   </table>
-  <h2>最新翻译</h2>
-  <a href="/dicts" target="_blank">更多</a>
-  <table>
-    <% dicts.items.map do |dict| %>
-    <tr><td><%= dict.from %></td><td><%= dict.to %></td><td><%= dict.created_at %></td></tr>
-    <% end %>
-  </table>
   <script src="/assets/js/main.js"></script>
   <footer>
     <hr/>
     <div>Version: <%= version %>, Build Time: <%= build_time %></div>
   </footer>
+  </div>
+  <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+  <script src="http://cdn.staticfile.org/semantic-ui/0.19.3/javascript/semantic.min.js" type="text/javascript"></script>
 </body>
 </html>
