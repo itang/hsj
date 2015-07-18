@@ -98,18 +98,14 @@ module Haoshuju
         end
 
         def find_by_id(id: Int64): T?
-          with_db do |db|
-            db.query("select * from #{table_name} where id = ?", id)
-              .map {|x| row_mapper(x)}
-              .first?
-          end
+          with_db(&.query("select * from #{table_name} where id = ?", id)
+                   .map {|x| row_mapper(x) }
+                   .first?)
         end
 
         def find_all
-          with_db do |db|
-            db.query("select * from #{table_name} order by id desc")
-              .map {|x| row_mapper(x) }
-          end
+          with_db(&.query("select * from #{table_name} order by id desc")
+                   .map {|x| row_mapper(x) })
         end
 
         private def pager_to_sql(pager)
