@@ -52,13 +52,23 @@ module Haoshuju
         def save!(t: T)
           ts = unapply(t)
           ts = ts.select {|x| x[0] != "id"}
+          values = ts.map {|x| x[1] }
           if is_new?(t)
             columns = ts.map {|x| "`#{x[0]}`" }.join(", ")
-            values = ts.map {|x| wrapper_column_value(x[1])}.join(", ")
-            with_db(&.execute("insert into #{table_name} (#{columns}) values (#{values})"))
+            cplaceholds = (0...ts.length).map {|x| "?"}.join(", ")
+
+            sql = "insert into #{table_name} (#{columns}) values (#{cplaceholds})"
+            puts "DEBUG save sql: #{sql} #{values}"
+
+            with_db(&.execute(sql, values))
           else
-            updates = ts.map{|x| "#{x[0]} = #{ wrapper_column_value(x[1])}"}.join(", ")
-            with_db(&.execute("update #{table_name} set #{updates} where id = #{id_value(t)} "))
+            cplaceholds = ts.map {|x| "#{x[0]} = ?" }.join(", ")
+            values << id_value(t)
+
+            sql = "update #{table_name} set #{cplaceholds} where id = ?"
+            puts "DEBUG update sql: #{sql} #{values}"
+
+            with_db(&.execute(sql, values))
           end
         end
 
@@ -84,12 +94,12 @@ module Haoshuju
         end
 
         def delete_by_id!(id: Int64)
-          with_db(&.execute("delete from #{table_name} where id = #{id}"))
+          with_db(&.execute("delete from #{table_name} where id = ?", id))
         end
 
         def find_by_id(id: Int64): T?
           with_db do |db|
-            db.query("select * from #{table_name} where id = #{id}")
+            db.query("select * from #{table_name} where id = ?", id)
               .map {|x| row_mapper(x)}
               .first?
           end
@@ -103,17 +113,23 @@ module Haoshuju
         end
 
         private def pager_to_sql(pager)
-          "ORDER BY #{pager.sorter.sort} #{pager.sorter.dir} LIMIT #{pager.starts}, #{pager.size}"
+          {"ORDER BY ? LIMIT ?, ?", ["#{pager.sorter.sort} #{pager.sorter.dir.to_s}", pager.starts.to_i, pager.size.to_i]}
         end
 
         def find_page(pager: Pager): Page
           total = count()
-          items = find_by_sql("select * from #{table_name} #{pager_to_sql(pager)}").map {|x| row_mapper(x) }
+
+          psql = pager_to_sql(pager)
+          sql = "select * from #{table_name} #{psql[0]}"
+          values = psql[1]
+
+          items = find_by_sql(sql, values).map {|x| row_mapper(x) }
           Page.new(total, items, pager)
         end
 
         def count(): Int64
-          total =  find_by_sql("select count(*) as total FROM #{table_name}").map {|x| x["total"] }.first?
+          sql = "select count(*) as total FROM #{table_name}"
+          total =  find_by_sql(sql).map {|x| x["total"] }.first?
           total = if total
                     t(total, Int64).not_nil!
                   else
@@ -122,7 +138,13 @@ module Haoshuju
         end
 
         private def find_by_sql(sql)
+          puts "DEBUG: sql #{sql}"
           with_db(&.query(sql))
+        end
+
+        private def find_by_sql(sql, values)
+          puts "DEBUG: sql #{sql} #{values}"
+          with_db(&.query(sql, values))
         end
 
         private def id_name

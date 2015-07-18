@@ -2,7 +2,7 @@
 libs/
 .deps/
 main
-main_dev
+main_debug
 
 .deps.lock
 
