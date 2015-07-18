@@ -1,5 +1,5 @@
 require "sqlite3"
-require "../libs/simpleorm"
+require "../lib/simpleorm"
 
 include Haoshuju::Libs::SimpleORM
 
