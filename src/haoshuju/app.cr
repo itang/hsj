@@ -13,6 +13,7 @@ module Haoshuju
       get "/dicts",     "dict#index"
       post "/dict",     "dict#add_dict!"
       get "/_migrate",  "tool#migrate!"
+      get "/ping",      "tool#ping"
 
       register WelcomeController
       register DictController

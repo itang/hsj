@@ -1,5 +1,5 @@
 class ToolController < BaseController
-  actions :migrate!
+  actions :migrate!, :ping
 
   @@dict_service = DictService.new
   def migrate!
@@ -12,5 +12,9 @@ class ToolController < BaseController
     end
 
     html("finish")
+  end
+
+  def ping
+    html "pong"
   end
 end
