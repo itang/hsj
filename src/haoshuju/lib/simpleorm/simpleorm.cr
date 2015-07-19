@@ -104,8 +104,7 @@ module Haoshuju
         end
 
         def find_all
-          with_db(&.query("select * from #{table_name} order by id desc")
-                   .map {|x| row_mapper(x) })
+          find_by_sql("select * from #{table_name} order by id desc").map {|x| row_mapper(x) }
         end
 
         private def pager_to_sql(pager)
@@ -123,23 +122,26 @@ module Haoshuju
           Page.new(total, items, pager)
         end
 
-        def count(): Int64
-          sql = "select count(*) as total FROM #{table_name}"
-          total =  find_by_sql(sql).map {|x| x["total"] }.first?
-          total = if total
-                    t(total, Int64).not_nil!
-                  else
-                    0_i64
-                  end
+        private def count_by_sql(sql)
+          total =  find_by_sql(sql).map {|x| x[0] }.first?
+          if total
+            t(total, Int64).not_nil!
+          else
+            0_i64
+          end
+        end
+
+        private def count(): Int64
+          count_by_sql "select count(*) as total FROM #{table_name}"
         end
 
         private def find_by_sql(sql)
-          puts "DEBUG: sql #{sql}"
+          puts "DEBUG: sql '#{sql}'"
           with_db(&.query(sql))
         end
 
         private def find_by_sql(sql, values)
-          puts "DEBUG: sql #{sql} #{values}"
+          puts "DEBUG: sql '#{sql}' #{values}"
           with_db(&.query(sql, values))
         end
 
