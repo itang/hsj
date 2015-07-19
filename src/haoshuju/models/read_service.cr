@@ -44,6 +44,10 @@ class ReadService
               created_at: "2015-07-18 01:00",
               status: ReadStatus::Readed
 
-    [read1, read2, read3, read4, read5, read6, read7].reverse
+    read8 = Read.new "http://learnyousomeerlang.com/content",
+              title: "Learn you some Erlang",
+              created_at: "2015-07-19 20:44"
+
+    [read1, read2, read3, read4, read5, read6, read7, read8].reverse
   end
 end
