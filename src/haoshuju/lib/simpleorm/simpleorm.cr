@@ -122,7 +122,7 @@ module Haoshuju
           Page.new(total, items, pager)
         end
 
-        private def count_by_sql(sql)
+        def count_by_sql(sql)
           total =  find_by_sql(sql).map {|x| x[0] }.first?
           if total
             t(total, Int64).not_nil!
@@ -147,19 +147,6 @@ module Haoshuju
 
         private def id_name
           "id"
-        end
-
-        private def wrapper_column_value(v)
-          case v
-          when String
-            "'#{v}'"
-          when Nil
-            "null"
-          when Int32, Int64, Float32, Float64, Bool
-            v
-          else
-            "'#{v.to_s}'"
-          end
         end
       end
     end
