@@ -107,10 +107,6 @@ module Haoshuju
           find_by_sql("select * from #{table_name} order by id desc").map {|x| row_mapper(x) }
         end
 
-        private def pager_to_sql(pager)
-          {"ORDER BY ? LIMIT ?, ?", ["#{pager.sorter.sort} #{pager.sorter.dir.to_s}", pager.starts.to_i, pager.size.to_i]}
-        end
-
         def find_page(pager: Pager): Page
           total = count()
 
@@ -143,6 +139,14 @@ module Haoshuju
         private def find_by_sql(sql, values)
           puts "DEBUG: sql '#{sql}' #{values}"
           with_db(&.query(sql, values))
+        end
+
+        private def wrap_field(v: String): String
+          v.gsub(/'/, "''")
+        end
+
+        private def pager_to_sql(pager)
+          {"ORDER BY #{wrap_field(pager.sorter.sort)} #{pager.sorter.dir.to_s} LIMIT ?, ?", [pager.starts.to_i, pager.size.to_i]}
         end
 
         private def id_name
