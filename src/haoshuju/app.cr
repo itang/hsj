@@ -14,6 +14,7 @@ module Haoshuju
       post "/dict",     "dict#add_dict!"
       get "/_migrate",  "tool#migrate!"
       get "/ping",      "tool#ping"
+      get "/test/timeout", "tool#timeout"
 
       register WelcomeController
       register DictController

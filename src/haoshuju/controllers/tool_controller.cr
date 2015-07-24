@@ -1,5 +1,5 @@
 class ToolController < BaseController
-  actions :migrate!, :ping
+  actions :migrate!, :ping, :timeout
 
   @@dict_service = DictService.new
   def migrate!
@@ -15,6 +15,27 @@ class ToolController < BaseController
   end
 
   def ping
-    html "pong"
+    text "pong"
+  end
+
+  def timeout
+    t = get_int("t", 5)
+    if t > 20
+      text "invalid params['t'] = #{t} > 20."
+    else
+      sleep(t)
+      text "finish after #{t} secs."
+    end
+  end
+
+  private def get_int(k, d)
+    if params.has_key?(k)
+      params[k].to_i
+    else
+      d
+    end
+  rescue e
+    puts e
+    d
   end
 end
