@@ -2,6 +2,7 @@ class ToolController < BaseController
   actions :migrate!, :ping, :timeout
 
   @@dict_service = DictService.new
+
   def migrate!
     with_db do |db|
       puts "INFO: #{@@dict_service.ddl_sql}"
