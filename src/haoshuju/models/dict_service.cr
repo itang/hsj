@@ -34,7 +34,7 @@ class DictDAO < CrudRepository(Dict)
     end
   end
 
- def row_mapper(rs)
+ def row_mapper(rs, _index)
     Dict.new.tap do |d|
       d.id = t(rs["id"], Int64)
       d.from = t(rs["from"], String)
@@ -46,7 +46,7 @@ class DictDAO < CrudRepository(Dict)
     end
   end
 
-  def unapply(dict)
+  def row_unmapper(dict)
      [{"id", dict.id},
      {"from", dict.from},
      {"to", dict.to},

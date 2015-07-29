@@ -43,14 +43,14 @@ module Haoshuju
 
         abstract def init_data!
 
-        abstract def row_mapper(rs: SQLite3::ResultSet) : T
+        abstract def row_mapper(rs: SQLite3::ResultSet, index: Int32) : T
 
-        abstract def unapply(t: T) : Array(Tuple(String, EVType))
+        abstract def row_unmapper(t: T) : Array(Tuple(String, EVType))
 
         abstract def table_name: String
 
         def save!(t: T)
-          ts = unapply(t)
+          ts = row_unmapper(t)
           ts = ts.select {|x| x[0] != "id"}
           values = ts.map {|x| x[1] }
           if is_new?(t)
@@ -98,13 +98,17 @@ module Haoshuju
         end
 
         def find_by_id(id: Int64): T?
-          with_db(&.query("select * from #{table_name} where id = ?", id)
-                   .map {|x| row_mapper(x) }
-                   .first?)
+          find_one("select * from #{table_name} where id = ?", [id])
+        end
+
+        def find_one(sql, values)
+          find_by_sql(sql, values)
+            .map_with_index {|x, i| row_mapper(x, i)}
+            .first?
         end
 
         def find_all
-          find_by_sql("select * from #{table_name} order by id desc").map {|x| row_mapper(x) }
+          find_by_sql("select * from #{table_name} order by id desc").map_with_index {|x, i| row_mapper(x, i) }
         end
 
         def find_page(pager: Pager): Page
@@ -113,8 +117,8 @@ module Haoshuju
           psql = pager_to_sql(pager)
           sql = "select * from #{table_name} #{psql[0]}"
           values = psql[1]
+          items = find_by_sql(sql, values).map_with_index {|x, i| row_mapper(x, i) }
 
-          items = find_by_sql(sql, values).map {|x| row_mapper(x) }
           Page.new(total, items, pager)
         end
 
