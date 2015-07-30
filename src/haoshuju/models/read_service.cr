@@ -48,6 +48,18 @@ class ReadService
               title: "Learn you some Erlang",
               created_at: "2015-07-19 20:44"
 
-    [read1, read2, read3, read4, read5, read6, read7, read8].reverse
+    read9 = Read.new "http://www.infoq.com/cn/articles/kafka-analysis-part-1",
+              title: "Kafka剖析（一）：Kafka背景及架构介绍 ",
+              created_at: "2015-07-30-17-23"
+
+    read10 = Read.new "http://www.infoq.com/cn/articles/kafka-analysis-part-2",
+              title: "Kafka设计解析（二）：Kafka High Availability （上）",
+              created_at: "2015-07-30-17-23"
+
+    read11 = Read.new "http://www.infoq.com/cn/articles/kafka-analysis-part-3",
+              title: "Kafka设计解析（三）：Kafka High Availability （下）",
+              created_at: "2015-07-30-17-23"
+
+    [read1, read2, read3, read4, read5, read6, read7, read8, read9, read10, read11].reverse
   end
 end
