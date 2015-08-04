@@ -62,7 +62,7 @@ module Haoshuju
 
             with_db(&.execute(sql, values))
           else
-            cplaceholds = ts.map {|x| "#{x[0]} = ?" }.join(", ")
+            cplaceholds = ts.map {|x| f = wrap_field_name(x[0]); "#{f} = ?" }.join(", ")
             values << id_value(t)
 
             sql = "update #{table_name} set #{cplaceholds} where id = ?"
@@ -97,14 +97,19 @@ module Haoshuju
           with_db(&.execute("delete from #{table_name} where id = ?", id))
         end
 
-        def find_by_id(id: Int64): T?
+        def find_by_id(id: Int64) #: T?
           find_one("select * from #{table_name} where id = ?", [id])
         end
 
-        def find_one(sql, values)
+        def find_one(sql, values) #: T?
           find_by_sql(sql, values)
             .map_with_index {|x, i| row_mapper(x, i)}
             .first?
+        end
+
+        def find_one_by_property(field, value)# : T?
+          wfield = wrap_field_name(field)
+          find_one("select * from #{table_name} where #{wfield} = ?", [value])
         end
 
         def find_all
@@ -131,6 +136,10 @@ module Haoshuju
           end
         end
 
+        private def wrap_field_name(name)
+          "`#{name}`"
+        end
+
         private def count(): Int64
           count_by_sql "select count(*) as total FROM #{table_name}"
         end
@@ -145,12 +154,12 @@ module Haoshuju
           with_db(&.query(sql, values))
         end
 
-        private def wrap_field(v: String): String
+        private def wrap_field_falue(v: String): String
           v.gsub(/'/, "''")
         end
 
         private def pager_to_sql(pager)
-          {"ORDER BY #{wrap_field(pager.sorter.sort)} #{pager.sorter.dir.to_s} LIMIT ?, ?", [pager.starts.to_i, pager.size.to_i]}
+          {"ORDER BY #{wrap_field_falue(pager.sorter.sort)} #{pager.sorter.dir.to_s} LIMIT ?, ?", [pager.starts.to_i, pager.size.to_i]}
         end
 
         private def id_name

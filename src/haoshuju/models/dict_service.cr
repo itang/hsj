@@ -66,5 +66,15 @@ class DictDAO < CrudRepository(Dict)
 end
 
 class DictService < DictDAO
-
+  def process_dict!(dict: Dict)
+    old = find_one_by_property("from", dict.from)
+    if old
+      puts "INFO: update dict"
+      old.times = (old.times || 0) + 1
+      save!(old)
+    else
+      puts "INFO: create dict"
+      save!(dict)
+    end
+  end
 end

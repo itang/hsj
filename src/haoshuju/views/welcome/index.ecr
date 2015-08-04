@@ -53,7 +53,7 @@
             <a href="/dicts" target="_blank">更多</a>
             <table>
               <% dicts.items.map do |dict| %>
-              <tr><td><%= dict.from %></td><td><%= dict.to %></td><td><%= dict.created_at %></td></tr>
+              <tr><td><%= dict.from %></td><td><%= dict.to %></td><td><%= dict.times %></td><td><%= dict.created_at %></td></td></tr>
               <% end %>
             </table>
           </div>
