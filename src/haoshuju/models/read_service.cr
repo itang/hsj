@@ -50,7 +50,8 @@ class ReadService
 
     read9 = Read.new "http://www.infoq.com/cn/articles/kafka-analysis-part-1",
               title: "Kafka剖析（一）：Kafka背景及架构介绍 ",
-              created_at: "2015-07-30-17-23"
+              created_at: "2015-07-30-17-23",
+              status: ReadStatus::Readed
 
     read10 = Read.new "http://www.infoq.com/cn/articles/kafka-analysis-part-2",
               title: "Kafka设计解析（二）：Kafka High Availability （上）",
