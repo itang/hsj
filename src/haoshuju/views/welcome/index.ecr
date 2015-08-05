@@ -69,7 +69,9 @@
     <tr>
       <td><%= read.title %></td>
       <td><a href="<%= read.url %>" target="_blank"><%= read.url %></a></td>
-      <td width="100px"><%= read.status %></td>
+      <td width="100px">
+        <span style='color:<%= read.status.to_s == "Readed" ? "gray" : "green" %>'><%= read.status %></span>
+      </td>
       <td><%= read.created_at %></td>
     </tr>
     <% end %>
