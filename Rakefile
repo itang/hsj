@@ -33,8 +33,13 @@ desc 'build debug'
 task :build_debug => %w[main_debug]
 
 desc 'run'
-task :run => %w[build_debug] do
-  sh 'RUN_MODE=development ./main_debug'
+task :run, [:mode] => %w[build_debug] do |_t, args|
+  mode = args[:mode] || ENV['mode']
+  if (mode || "").start_with? "d"
+    sh 'RUN_MODE=development ./main_debug'
+  else
+    sh './main_debug'
+  end
 end
 
 desc 'start'
