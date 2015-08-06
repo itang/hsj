@@ -21,7 +21,7 @@ class WelcomeController < BaseController
     @languages = @@language_service.find_languages
     @reads = @@read_service.find_reads
     @build_time = get_build_time
-    @dicts = @@dict_service.find_page(Pager.new())
+    @dicts = @@dict_service.find_all(Pager.new())
 
     respond_to do |format|
       format.html { render "index" }

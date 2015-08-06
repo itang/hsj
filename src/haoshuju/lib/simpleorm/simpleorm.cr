@@ -72,6 +72,10 @@ module Haoshuju
           end
         end
 
+        def save!(ts: Array(T))
+          ts.map {|t| save!(t)}
+        end
+
         def id_value(t: T) : Int64?
           if t.responds_to? :id
             t.id as Int64?
@@ -93,8 +97,16 @@ module Haoshuju
           end
         end
 
+        def delete!(ts: Array(T))
+          ts.map {|t| delete!(t)}
+        end
+
         def delete_by_id!(id: Int64)
           with_db(&.execute("delete from #{table_name} where id = ?", id))
+        end
+
+        def exists(id: Int64)
+          !find_by_id(id).nil?
         end
 
         def find_by_id(id: Int64) #: T?
@@ -116,7 +128,7 @@ module Haoshuju
           find_by_sql("select * from #{table_name} order by id desc").map_with_index {|x, i| row_mapper(x, i) }
         end
 
-        def find_page(pager: Pager): Page
+        def find_all(pager: Pager): Page
           total = count()
 
           psql = pager_to_sql(pager)
@@ -125,6 +137,16 @@ module Haoshuju
           items = find_by_sql(sql, values).map_with_index {|x, i| row_mapper(x, i) }
 
           Page.new(total, items, pager)
+        end
+
+        # TODO:
+        def find_all(sorter: Sorter): Array(T)
+
+        end
+
+        # TODO
+        def find_all(id: Array(Int64)): Array(T)
+
         end
 
         def count_by_sql(sql)
