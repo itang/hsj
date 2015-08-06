@@ -101,7 +101,7 @@ module Haoshuju
           ts.map {|t| delete!(t)}
         end
 
-        def delete_by_id!(id: Int64)
+        def delete!(id: Int64)
           with_db(&.execute("delete from #{table_name} where id = ?", id))
         end
 
@@ -139,14 +139,16 @@ module Haoshuju
           Page.new(total, items, pager)
         end
 
-        # TODO:
-        def find_all(sorter: Sorter): Array(T)
+        def find_all(sorter: Sorter) #: Array(T)
+          total = count()
 
+          ssql = sorter_to_sql(sorter)
+          sql = "select * from #{table_name} #{ssql}"
+          find_by_sql(sql).map_with_index {|x, i| row_mapper(x, i) }
         end
 
-        # TODO
-        def find_all(id: Array(Int64)): Array(T)
-
+        def find_all(ids: Array(Int64)) #: Array(T)
+          find_by_sql("select * from #{table_name} where id in (#{array_as_inclause(ids)})").map_with_index {|x, i| row_mapper(x, i) }
         end
 
         def count_by_sql(sql)
@@ -155,6 +157,14 @@ module Haoshuju
             t(total, Int64).not_nil!
           else
             0_i64
+          end
+        end
+
+        private def array_as_inclause(arr: (Array(Int64) | Array(String)))
+          if typeof(arr) == Array(32)
+            arr.map(&.to_s).join(", ")
+          else
+            arr.map{|x| quote_str(x)}.join(", ")
           end
         end
 
@@ -180,8 +190,16 @@ module Haoshuju
           v.gsub(/'/, "''")
         end
 
+        private def quote_str(s)
+          "'#{s}'"
+        end
+
         private def pager_to_sql(pager)
           {"ORDER BY #{wrap_field_falue(pager.sorter.sort)} #{pager.sorter.dir.to_s} LIMIT ?, ?", [pager.starts.to_i, pager.size.to_i]}
+        end
+
+        private def sorter_to_sql(sorter)
+          "ORDER BY #{wrap_field_falue(sorter.sort)} #{sorter.dir.to_s}"
         end
 
         private def id_name

@@ -7,7 +7,7 @@ class DictController < BaseController
 
   view "index", "#{__DIR__}/../views/dict"
   def index
-    @dicts = @@dict_service.find_all
+    @dicts = @@dict_service.find_all(Sorter.new("id")) # @@dict_service.find_all([1_i64,2_i64,3_i64])
     respond_to do |format|
       format.html { render "index" }
     end
