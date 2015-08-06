@@ -50,17 +50,20 @@ class ReadService
 
     read9 = Read.new "http://www.infoq.com/cn/articles/kafka-analysis-part-1",
               title: "Kafka剖析（一）：Kafka背景及架构介绍 ",
-              created_at: "2015-07-30-17-23",
+              created_at: "2015-07-30 17-23",
               status: ReadStatus::Readed
 
     read10 = Read.new "http://www.infoq.com/cn/articles/kafka-analysis-part-2",
               title: "Kafka设计解析（二）：Kafka High Availability （上）",
-              created_at: "2015-07-30-17-23"
+              created_at: "2015-07-30 17-23"
 
     read11 = Read.new "http://www.infoq.com/cn/articles/kafka-analysis-part-3",
               title: "Kafka设计解析（三）：Kafka High Availability （下）",
-              created_at: "2015-07-30-17-23"
+              created_at: "2015-07-30 17-23"
+    read12 = Read.new "http://www.cakesolutions.net/teamblogs/scala-dissection-basic-types",
+              title: "Scala dissection basic types",
+              created_at: "2015-08-06 22:48"
 
-    [read1, read2, read3, read4, read5, read6, read7, read8, read9, read10, read11].reverse
+    [read1, read2, read3, read4, read5, read6, read7, read8, read9, read10, read11, read12].reverse
   end
 end
