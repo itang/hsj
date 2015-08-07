@@ -62,7 +62,8 @@ class ReadService
               created_at: "2015-07-30 17-23"
     read12 = Read.new "http://www.cakesolutions.net/teamblogs/scala-dissection-basic-types",
               title: "Scala dissection basic types",
-              created_at: "2015-08-06 22:48"
+              created_at: "2015-08-06 22:48",
+              status: ReadStatus::Readed
 
     [read1, read2, read3, read4, read5, read6, read7, read8, read9, read10, read11, read12].reverse
   end
