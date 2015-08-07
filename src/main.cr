@@ -9,8 +9,8 @@ require "./haoshuju/utils"
 include Haoshuju
 
 WD = Dir.working_directory
-PORT = ENV.has_key?("PORT") ? ENV["PORT"].to_i : 3000
-RUN_MODE = ENV.has_key?("RUN_MODE") ? ENV["RUN_MODE"] : "production" # development | production
+PORT = ENV["PORT"]?.try &.to_i || 3000
+RUN_MODE = ENV["RUN_MODE"]? || "production" # development | production
 APPPATH = File.expand_path($0)
 puts "$0: #{$0}, app_path: #{APPPATH}, work dir: #{WD}, port: #{PORT}, run mode: #{RUN_MODE}"
 
