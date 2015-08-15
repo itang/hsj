@@ -1,15 +1,15 @@
 class ToolController < BaseController
   actions :migrate!, :ping, :timeout
 
-  @@dict_service = DictService.new
+  @@injector = Haoshuju::Injector.instance
 
   def migrate!
     with_db do |db|
-      puts "INFO: #{@@dict_service.ddl_sql}"
-      @@dict_service.auto_ddl!
+      puts "INFO: #{@@injector.dict_service.ddl_sql}"
+      @@injector.dict_service.auto_ddl!
 
       puts "INFO: init data"
-      @@dict_service.init_data!
+      @@injector.dict_service.init_data!
     end
 
     html("finish")
