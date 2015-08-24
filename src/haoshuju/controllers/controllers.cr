@@ -2,6 +2,7 @@ require "json"
 require "amethyst/all"
 require "./../models"
 require "../version"
+require "../injector"
 
 include Haoshuju::Models
 
