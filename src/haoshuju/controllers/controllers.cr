@@ -21,6 +21,10 @@ module Haoshuju
           JSON.parse body
         end
       end
+
+      protected def injector
+        Haoshuju::Injector.instance
+      end
     end
 
     require "./*"
