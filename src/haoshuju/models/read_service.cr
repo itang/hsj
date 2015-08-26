@@ -15,7 +15,7 @@ end
 
 class ReadService
   def find_reads
-    ([] of Read).tap do |rs|
+    Array(Read).new.tap do |rs|
       rs << Read.new "https://scotch.io/tutorials/getting-started-with-vim-an-interactive-guide",
                 title: "Getting Started with Vim: An Interactive Guide",
                 created_at: "2015-07-08 12:06"
@@ -70,6 +70,9 @@ class ReadService
       rs << Read.new "https://leanpub.com/purescript/read#leanpub-auto-installing-purescript",
                 title: "PureScript by Example",
                 created_at: "2015-08-07 14:03"
+      rs << Read.new "http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=209727496&idx=1&sn=86b64ddadcc91bc6b0741a870692b3c0",
+                title: "如何实现支持数亿用户的长连消息系统 | Golang高并发案例 ",
+                created_at: "2015-0826 09:45"
     end.reverse
   end
 end
