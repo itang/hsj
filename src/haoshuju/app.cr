@@ -15,10 +15,12 @@ module Haoshuju
       get "/_migrate",  "tool#migrate!"
       get "/ping",      "tool#ping"
       get "/test/timeout", "tool#timeout"
+      get "/langs_sheet", "langs#sheet"
 
       register WelcomeController
       register DictController
       register ToolController
+      register LangsController
     end
   end
 end
