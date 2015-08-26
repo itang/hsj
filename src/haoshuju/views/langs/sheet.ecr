@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
-  <title>Haoshuju.net</title>
+  <title>Languages Sheet</title>
   <link rel="stylesheet" href="//cmcenroe.me/writ/writ.min.css">
   <link href="http://cdn.staticfile.org/semantic-ui/0.19.3/css/semantic.min.css" rel="stylesheet">
   <link href="/assets/css/main.css" rel="stylesheet">
@@ -15,6 +15,7 @@
 <body>
 <div class="ui container">
   <h1>Languages Sheet</h1>
+  <div>update time: 2015-08-26</div>
   <table>
   <tr><th>Category</th><th>item</th><th>Scala</th><th>Ruby</th><th>Crystal</th><th>Elixir</th><th>Rust</th></tr>
   <tr>
@@ -24,6 +25,38 @@
     <td><code>puts "Hello, World"</code></td>
     <td><code>IO.puts "Hello, World"</code></td>
     <td><code>println!("Hello, World")</code></td>
+  </tr>
+  <tr>
+    <td></td><td>Compiler</td>
+    <td><code>$ scalac script.scala</code></td>
+    <td><code>-</code></td>
+    <td><code>$ crystal build script.cr</code></td>
+    <td><code>$ elixirc script.exs</code></td>
+    <td><code>$ rustc script.rs</code></td>
+  </tr>
+  <tr>
+    <td></td><td>Launcher</td>
+    <td><code>$ scala script.scala</code></td>
+    <td><code>$ ruby script.rb</code></td>
+    <td><code>$ crystal script.cr</code></td>
+    <td><code>$ elixir script.exs</code></td>
+    <td><code>-</code></td>
+  </tr>
+  <tr>
+    <td></td><td>REPL</td>
+    <td><code>$ scala</code></td>
+    <td><code>$ irb</code></td>
+    <td><code>-</code></td>
+    <td><code>$ iex</code></td>
+    <td><code>$ rusti</code></td>
+  </tr>
+  <tr>
+    <td></td><td>Build Tool</td>
+    <td><code>sbt</code></td>
+    <td><code>rake, bundle</code></td>
+    <td><code>-</code></td>
+    <td><code>mix</code></td>
+    <td><code>cargo</code></td>
   </tr>
   </table>
 </div>
