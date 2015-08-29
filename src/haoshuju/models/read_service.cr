@@ -70,12 +70,18 @@ class ReadService
       rs << Read.new "https://leanpub.com/purescript/read#leanpub-auto-installing-purescript",
                 title: "PureScript by Example",
                 created_at: "2015-08-07 14:03"
+
       rs << Read.new "http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=209727496&idx=1&sn=86b64ddadcc91bc6b0741a870692b3c0",
                 title: "如何实现支持数亿用户的长连消息系统 | Golang高并发案例 ",
                 created_at: "2015-08-26 09:45"
+
       rs << Read.new "http://blog.plataformatec.com.br/2015/06/elixir-in-times-of-microservices/",
                 title: "Elixir in times of microservices",
                 created_at: "2015-08-29 09:30"
+
+      rs << Read.new "http://www.infoq.com/cn/presentations/mobile-big-data-platform-architecture-practice",
+                title: "移动大数据平台架构实践",
+                created_at: ""
     end.reverse
   end
 end
