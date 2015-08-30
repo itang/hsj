@@ -81,7 +81,11 @@ class ReadService
 
       rs << Read.new "http://www.infoq.com/cn/presentations/mobile-big-data-platform-architecture-practice",
                 title: "移动大数据平台架构实践",
-                created_at: ""
+                created_at: "2015-08-29 12:00"
+
+      rs << Read.new "http://dockone.io/article/610",
+                title: "Autodesk基于Mesos和Kafka的通用事件系统架构",
+                created_at: "2015-08-30 12:40"
     end.reverse
   end
 end
