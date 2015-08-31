@@ -1,5 +1,5 @@
 class ToolController < BaseController
-  actions :migrate!, :ping, :timeout
+  actions :migrate!, :ping, :timeout, :querystring
 
   def migrate!
     with_db do |db|
@@ -25,6 +25,10 @@ class ToolController < BaseController
       sleep(t)
       text "finish after #{t} secs."
     end
+  end
+
+  def querystring
+    html params.to_json
   end
 
   private def get_int(k, d)

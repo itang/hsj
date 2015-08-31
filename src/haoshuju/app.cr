@@ -16,6 +16,7 @@ module Haoshuju
       get "/ping",      "tool#ping"
       get "/test/timeout", "tool#timeout"
       get "/langs_sheet", "langs#sheet"
+      get "/tool/querystring", "tool#querystring"
 
       register WelcomeController
       register DictController
