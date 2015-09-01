@@ -8,13 +8,11 @@ class ApiAuthMiddleware < Middleware::Base
     if request.path.starts_with? "/api"
       unless auth?(request.headers["AUTH"]?)
         puts "auth not passed!"
-        return Response.new(401, "未授权").tap do |x|
-          x.header("Content-Type", "text/plain; charset=utf-8")
-        end
+        return Response.new(401, "未授权").tap &.header("Content-Type", "text/plain; charset=utf-8")
+      else
+        puts "auth passed!"
       end
     end
-
-    puts "auth passed!"
 
     @app.call(request)
   end

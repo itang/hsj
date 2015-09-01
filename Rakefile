@@ -55,4 +55,5 @@ end
 desc 'mock'
 task :mock do
   sh %q(crul post http://localhost:3000/api/dict -H 'AUTH:test;test2015' -d '{"from":"hello","to":"nihao"}')
+  sh %q(crul post http://localhost:3000/api/dict -H 'AUTH:test;test2015_bad' -d '{"from":"hello","to":"nihao"}')
 end
