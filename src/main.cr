@@ -20,6 +20,7 @@ App.settings.configure do |conf|
 end
 
 App.use Middlewares::XRuntimeMiddleware
+App.use Middlewares::ApiAuthMiddleware
 
 app = HaoshujuApp.new(WD)
 
