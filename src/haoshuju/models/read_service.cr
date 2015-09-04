@@ -86,6 +86,11 @@ class ReadService
       rs << Read.new "http://dockone.io/article/610",
                 title: "Autodesk基于Mesos和Kafka的通用事件系统架构",
                 created_at: "2015-08-30 12:40"
+
+      rs << Read.new "http://andrealeopardi.com/posts/handling-tcp-connections-in-elixir/",
+                title: "Handling TCP connections in Elixir",
+                created_at: "2015-09-04 22:21"
+
     end.reverse
   end
 end
