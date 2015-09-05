@@ -17,21 +17,19 @@ module Haoshuju::Libs::Data
   end
 
   class Pager
-    getter page, limit, sorter
+    getter page, size, sorter
 
     def initialize(@page=1_u32 : UInt32,
-                   @limit=10_u32 : UInt32,
+                   @size=10_u32 : UInt32,
                    @sorter=Sorter.new : Sorter)
     end
 
-    alias_method size, limit
-
     def starts
-      (page - 1) * limit
+      (page - 1) * size
     end
 
     def ends
-      starts + limit - 1
+      starts + size - 1
     end
   end
 

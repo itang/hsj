@@ -4,6 +4,7 @@ require "./../models"
 require "../version"
 require "../injector"
 
+
 include Haoshuju::Models
 
 module Haoshuju
@@ -26,7 +27,7 @@ module Haoshuju
         Haoshuju::Injector.instance
       end
     end
-
-    require "./*"
   end
 end
+
+require "./*"
