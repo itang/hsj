@@ -30,6 +30,7 @@ module Haoshuju
           while(self.next)
             yield self
           end
+          self.close() unless self.closed?
         end
       end
 
