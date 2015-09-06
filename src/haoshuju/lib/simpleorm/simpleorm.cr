@@ -36,7 +36,7 @@ module Haoshuju
 
       alias EVType = (String | Bool | Nil | Float64| Int64 )
 
-      abstract class CrudRepository(T)
+      abstract class CrudRepository(T, D)
 
         abstract def ddl_sql : Array(String)
 
@@ -77,13 +77,13 @@ module Haoshuju
           ts.map {|t| save!(t)}
         end
 
-        def id_value(t: T) : Int64?
+        def id_value(t: T) : D?
           if t.responds_to? :id
-            t.id as Int64?
+            t.id as D?
           end
         end
 
-        def is_new?(t: T)
+        def is_new?(t: T): Bool
           if t.responds_to? :id
             t.id.nil?
           else
@@ -102,25 +102,25 @@ module Haoshuju
           ts.map {|t| delete!(t)}
         end
 
-        def delete!(id: Int64)
+        def delete!(id: D)
           with_db(&.execute("delete from #{table_name} where id = ?", id))
         end
 
-        def exists(id: Int64)
+        def exists(id: D)
           !find_by_id(id).nil?
         end
 
-        def find_by_id(id: Int64) #: T?
+        def find_by_id(id: D): T?
           find_one("select * from #{table_name} where id = ?", [id])
         end
 
-        def find_one(sql, values) #: T?
+        def find_one(sql, values): T?
           find_by_sql(sql, values)
             .map_with_index {|x, i| row_mapper(x, i)}
             .first?
         end
 
-        def find_one_by_property(field, value)# : T?
+        def find_one_by_property(field, value): T?
           wfield = wrap_field_name(field)
           find_one("select * from #{table_name} where #{wfield} = ?", [value])
         end
@@ -140,7 +140,7 @@ module Haoshuju
           Page.new(total, items, pager)
         end
 
-        def find_all(sorter: Sorter) #: Array(T)
+        def find_all(sorter: Sorter): Array(T)
           total = count()
 
           ssql = sorter_to_sql(sorter)
@@ -148,7 +148,7 @@ module Haoshuju
           find_by_sql(sql).map_with_index {|x, i| row_mapper(x, i) }
         end
 
-        def find_all(ids: Array(Int64)) #: Array(T)
+        def find_all(ids: Array(Int64)): Array(T)
           find_by_sql("select * from #{table_name} where id in (#{array_as_inclause(ids)})").map_with_index {|x, i| row_mapper(x, i) }
         end
 

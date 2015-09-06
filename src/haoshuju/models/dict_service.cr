@@ -10,7 +10,7 @@ module Haoshuju
       end
     end
 
-    class DictDAO < CrudRepository(Dict)
+    class DictDAO < CrudRepository(Dict, Int64)
       def table_name
         "dicts"
       end
