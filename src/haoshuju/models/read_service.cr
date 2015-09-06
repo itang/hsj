@@ -93,6 +93,25 @@ module Haoshuju
                     title: "Handling TCP connections in Elixir",
                     created_at: "2015-09-04 22:21"
 
+          rs << Read.new "https://engineering.linkedin.com/apache-kafka/how-we%E2%80%99re-improving-and-advancing-kafka-linkedin",
+                    title: "advancing-kafka-linkedin",
+                    created_at: "2015-09-06 23:23"
+
+          rs << Read.new "https://danielkeep.github.io/practical-intro-to-macros.html",
+                    title: "A Practical Intro to Macros in Rust 1.0",
+                    created_at: "2015-09-06 23:24"
+
+          rs << Read.new "http://blog.burntsushi.net/rust-error-handling/",
+                    title: "Error Handling in Rust",
+                    created_at: "2015-09-06 23:25"
+
+          rs << Read.new "http://huonw.github.io/blog/2015/02/some-notes-on-send-and-sync/",
+                    title: "Some notes on Send and Sync",
+                    created_at: "2015-09-06 23:25"
+
+          rs << Read.new "http://manishearth.github.io/blog/2015/05/27/wrapper-types-in-rust-choosing-your-guarantees/",
+                    title: "Wrapper Types in Rust: Choosing Your Guarantees",
+                    created_at: "2015-09-06 23:26"
         end.reverse
       end
     end
