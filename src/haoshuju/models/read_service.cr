@@ -112,6 +112,10 @@ module Haoshuju
           rs << Read.new "http://manishearth.github.io/blog/2015/05/27/wrapper-types-in-rust-choosing-your-guarantees/",
                     title: "Wrapper Types in Rust: Choosing Your Guarantees",
                     created_at: "2015-09-06 23:26"
+
+          rs << Read.new "http://blog.jobbole.com/88766/",
+                    title: "深入 Nginx：我们是如何为性能和规模做设计的",
+                    created_at: "2015-09-07 09:34"
         end.reverse
       end
     end
