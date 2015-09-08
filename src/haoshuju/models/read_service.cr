@@ -116,6 +116,10 @@ module Haoshuju
           rs << Read.new "http://blog.jobbole.com/88766/",
                     title: "深入 Nginx：我们是如何为性能和规模做设计的",
                     created_at: "2015-09-07 09:34"
+
+          rs << Read.new "http://phoenix.thefirehoseproject.com/0.html",
+                    title: "Phoenix tutorial",
+                    created_at: ""
         end.reverse
       end
     end
