@@ -119,6 +119,17 @@
       <td><code></code></td>
     </tr>
     <!-- END Collections -->
+    <!-- Snippets -->
+    <tr>
+      <td></td><td>String Code Generate</td>
+      <td><code>println((1 to 100).map( x => s"""a${x}: String = "$x"""").mkString(", "))</code></td>
+      <td><code>puts (1..100).map{|x| %(a#{x}: String = "#{x}")}.join(", ")</code></td>
+      <td><code>puts (1..100).map{|x| %(a#{x}: String = "#{x}")}.join(", ")</code></td>
+      <td><code>0..100 |> Enum.map( &( ~s[a#{&1}: String = "#{&1}"] )) |> Enum.join(", ") |> IO.puts</code></td>
+      <td><code>println!("{}", (1..100).map(|x| format!("a{}: String = \"{}\"", x, x)).collect::<Vec<_>>().connect(", "));</code></td>
+      <td><code>join(map(x -> "a$x: String = \"$x\"", range(1, 100)), ", ") |> println</code></td>
+    </tr>
+    <!-- END Snippets -->
   </table>
 </div>
 </body>
