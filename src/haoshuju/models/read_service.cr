@@ -120,6 +120,10 @@ module Haoshuju
           rs << Read.new "http://phoenix.thefirehoseproject.com/0.html",
                     title: "Phoenix tutorial",
                     created_at: ""
+
+          rs << Read.new "http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html",
+                    title: "agentzh 的 Nginx 教程",
+                    created_at: "2015-09-09 21:57",
         end.reverse
       end
     end
