@@ -124,6 +124,10 @@ module Haoshuju
           rs << Read.new "http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html",
                     title: "agentzh 的 Nginx 教程",
                     created_at: "2015-09-09 21:57"
+
+          rs << Read.new "http://www.jasongj.com/2015/08/09/KafkaColumn4/",
+                    title: "Kafka设计解析（四）- Kafka Consumer设计解析",
+                    created_at: "2015-09-15 09:52"
         end.reverse
       end
     end
