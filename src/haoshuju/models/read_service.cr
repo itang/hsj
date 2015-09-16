@@ -132,6 +132,30 @@ module Haoshuju
           rs << Read.new "https://mcxiaoke.gitbooks.io/rxdocs/content/",
                     title: "ReactiveX文档中文翻译",
                     created_at: "2015-09-15 18:28"
+
+          rs << Read.new "http://www.infoq.com/cn/articles/docker-core-technology-preview/",
+                    title: "深入浅出Docker（一）：Docker核心技术预览",
+                    created_at: "2015-09-16 19:38"
+
+          rs << Read.new "http://www.infoq.com/cn/articles/docker-command-line-quest",
+                    title: "深入浅出Docker（二）：Docker命令行探秘",
+                    created_at: "2015-09-16 19:48"
+
+          rs << Read.new "http://www.infoq.com/cn/articles/docker-open-source-road",
+                    title: "深入浅出Docker（三）：Docker开源之路",
+                    created_at: "2015-09-16 19:49"
+
+          rs << Read.new "http://www.infoq.com/cn/articles/docker-integrated-test-and-deployment",
+                    title: "深入浅出Docker（四）：Docker的集成测试部署之道",
+                    created_at: "2015-09-16 19:50"
+
+          rs << Read.new "http://www.infoq.com/cn/articles/docker-build-development-environment-based-on-fig",
+                    title: "深入浅出Docker（五）：基于Fig搭建开发环境",
+                    created_at: "2015-09-16 19:51"
+
+          rs << Read.new "http://www.infoq.com/cn/articles/deploy-your-application-like-google",
+                    title: "深入浅出Docker（六）：像谷歌一样部署你的应用",
+                    created_at: "2015-09-16 19:52"
         end.reverse
       end
     end
