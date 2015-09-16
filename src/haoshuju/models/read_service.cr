@@ -165,6 +165,10 @@ module Haoshuju
                     title: "Kafka by example: Kafka as Unix Pipes",
                     created_at: "2015-09-16 21:36"
 
+          rs << Read.new "http://di-in-scala.github.io/",
+                    title: "",
+                    created_at: "2015-09-16 21:52"
+
         end.reverse
       end
     end
