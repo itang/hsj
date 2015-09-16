@@ -166,8 +166,8 @@ module Haoshuju
                     created_at: "2015-09-16 21:36"
 
           rs << Read.new "http://di-in-scala.github.io/",
-                    title: "",
-                    created_at: "2015-09-16 21:52"
+                    title: "Dependency Injection in Scala using MacWire &middot; DI in Scala: guide",
+                    created_at: "2015-09-16 22:34"
 
         end.reverse
       end
