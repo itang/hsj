@@ -161,6 +161,10 @@ module Haoshuju
                     title: "Reactive Kafka with Scala",
                     created_at: "2015-09-16 21:23"
 
+          rs << Read.new "http://logallthethings.com/2015/09/15/kafka-by-example-kafka-as-unix-pipes/",
+                    title: "Kafka by example: Kafka as Unix Pipes",
+                    created_at: "2015-09-16 21:36"
+
         end.reverse
       end
     end
