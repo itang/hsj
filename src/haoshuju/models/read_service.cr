@@ -156,6 +156,11 @@ module Haoshuju
           rs << Read.new "http://www.infoq.com/cn/articles/deploy-your-application-like-google",
                     title: "深入浅出Docker（六）：像谷歌一样部署你的应用",
                     created_at: "2015-09-16 19:52"
+
+          rs << Read.new "https://www.typesafe.com/activator/template/reactive-kafka-scala",
+                    title: "Reactive Kafka with Scala",
+                    created_at: "2015-09-16 21:23"
+
         end.reverse
       end
     end
