@@ -169,6 +169,10 @@ module Haoshuju
                     title: "Dependency Injection in Scala using MacWire &middot; DI in Scala: guide",
                     created_at: "2015-09-16 22:34"
 
+          rs << Read.new "http://engineering.linkedin.com/kafka/kafka-linkedin-current-and-future",
+                    title: "Kafka at LinkedIn: Current and Future | LinkedIn Engineering",
+                    created_at: "2015-09-18 09:46"
+
         end.reverse
       end
     end
