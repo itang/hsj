@@ -25,7 +25,7 @@ module Haoshuju
       private def auth?(auth_str: String?): Bool
         if auth_str
           auth = auth_str.split(TOKEN_SEPARATOR)
-          if auth.length == 2
+          if auth.size == 2
             client_id, token = auth
             a = @auths[client_id]?
             return true if a && a[:token] == token

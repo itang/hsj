@@ -56,7 +56,7 @@ module Haoshuju
           values = ts.map {|x| x[1] }
           if is_new?(t)
             columns = ts.map {|x| "`#{x[0]}`" }.join(", ")
-            cplaceholds = (0...ts.length).map {|x| "?"}.join(", ")
+            cplaceholds = (0...ts.size).map {|x| "?"}.join(", ")
 
             sql = "insert into #{table_name} (#{columns}) values (#{cplaceholds})"
             puts "DEBUG save sql: #{sql} #{values}"
