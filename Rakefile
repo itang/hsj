@@ -61,5 +61,5 @@ end
 task :deploy do
   sh 'git commit -am "more"'
   sh 'git push origin master'
-  sh 'ssh itang@haoshuju.net;cd workspace/hsj;git pull;./hsj rerun || ./hsj rerun'
+  sh "ssh itang@haoshuju.net 'cd workspace/hsjgit pull;./hsj rerun || ./hsj rerun'"
 end
