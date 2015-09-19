@@ -173,6 +173,10 @@ module Haoshuju
                     title: "Kafka at LinkedIn: Current and Future | LinkedIn Engineering",
                     created_at: "2015-09-18 09:46"
 
+          rs << Read.new "http://redisinaction.com/",
+                    title: "Redis实战 &mdash; Redis 实战",
+                    created_at: "2015-09-19 11:38"
+
         end.reverse
       end
     end
