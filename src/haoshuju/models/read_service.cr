@@ -177,6 +177,10 @@ module Haoshuju
                     title: "Redis实战 &mdash; Redis 实战",
                     created_at: "2015-09-19 11:38"
 
+          rs << Read.new "http://m4rw3r.github.io/rust-and-monad-trait/",
+                    title: "Rust and the Monad trait - Not just higher kinded types &middot; m4rw3r",
+                    created_at: "2015-09-19 23:55"
+
         end.reverse
       end
     end
