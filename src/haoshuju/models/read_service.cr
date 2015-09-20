@@ -181,6 +181,10 @@ module Haoshuju
                     title: "Rust and the Monad trait - Not just higher kinded types &middot; m4rw3r",
                     created_at: "2015-09-19 23:55"
 
+          rs << Read.new "http://ifeve.com/apache-storm/",
+                    title: "Apache Storm 官方文档中文版 | 并发编程网 - ifeve.com",
+                    created_at: "2015-09-20 15:01"
+
         end.reverse
       end
     end
