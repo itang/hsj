@@ -189,6 +189,10 @@ module Haoshuju
                     title: "深入了解Erlang 垃圾回收机制以及其重要性 - SegmentFault",
                     created_at: "2015-09-22 13:35"
 
+          rs << Read.new "https://blog.twitter.com/2015/building-distributedlog-twitter-s-high-performance-replicated-log-service",
+                    title: "Building DistributedLog: Twitter’s high-performance replicated log service | Twitter Blogs",
+                    created_at: "2015-09-22 21:49"
+
         end.reverse
       end
     end
