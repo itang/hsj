@@ -17,7 +17,7 @@
   <h2>翻译</h2>
   <table>
     <tr><th>NO.<th>EN</th><th>ZN</th><th>Times</th><th>created_at</th></tr>
-    <% dicts.map_with_index do |dict, index| %>
+    <% dicts.each_with_index do |dict, index| %>
     <tr><td><%= index + 1 %></td><td><%= dict.from %></td><td><%= dict.to %></td><td><%= dict.times %></td><td><%= dict.created_at %></td></td></tr>
     <% end %>
   </table>
