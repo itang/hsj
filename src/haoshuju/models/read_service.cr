@@ -185,6 +185,10 @@ module Haoshuju
                     title: "Apache Storm 官方文档中文版 | 并发编程网 - ifeve.com",
                     created_at: "2015-09-20 15:01"
 
+          rs << Read.new "http://segmentfault.com/a/1190000003758525",
+                    title: "深入了解Erlang 垃圾回收机制以及其重要性 - SegmentFault",
+                    created_at: "2015-09-22 13:35"
+
         end.reverse
       end
     end
