@@ -193,6 +193,10 @@ module Haoshuju
                     title: "Building DistributedLog: Twitter’s high-performance replicated log service | Twitter Blogs",
                     created_at: "2015-09-22 21:49"
 
+          rs << Read.new "http://siejkowski.net/typeclasses-in-swift/",
+                    title: "Road to Mobilization: Typeclasses in Swift, Haskell and Scala",
+                    created_at: "2015-09-22 21:59"
+
         end.reverse
       end
     end
