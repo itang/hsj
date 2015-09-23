@@ -197,6 +197,10 @@ module Haoshuju
                     title: "Road to Mobilization: Typeclasses in Swift, Haskell and Scala",
                     created_at: "2015-09-22 21:59"
 
+          rs << Read.new "http://stackoverflow.com/questions/3508077/how-to-define-type-disjunction-union-types/3508555#3508555",
+                    title: "scala - How to define &quot;type disjunction&quot; (union types)? - Stack Overflow",
+                    created_at: "2015-09-23 14:00"
+
         end.reverse
       end
     end
