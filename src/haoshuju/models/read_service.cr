@@ -201,6 +201,10 @@ module Haoshuju
                     title: "scala - How to define &quot;type disjunction&quot; (union types)? - Stack Overflow",
                     created_at: "2015-09-23 14:00"
 
+          rs << Read.new "http://www.infoq.com/cn/articles/mesos-complex-data-analytics",
+                    title: "Mesos上的复杂数据分析",
+                    created_at: "2015-09-25 11:01"
+
         end.reverse
       end
     end

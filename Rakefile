@@ -58,8 +58,14 @@ task :mock do
   sh %q(crul post http://localhost:3000/api/dict -H 'AUTH:test;test2015_bad' -d '{"from":"hello","to":"nihao"}')
 end
 
+task 'deploy remote'
 task :deploy do
   sh 'git commit -am "more"'
   sh 'git push origin master'
   sh "ssh itang@haoshuju.net 'source .profile;cd workspace/hsj;git pull;./hsj rerun || ./hsj rerun'"
+end
+
+desc 'dev'
+task :dev do
+  sh 'guard'
 end
