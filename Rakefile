@@ -60,7 +60,8 @@ end
 
 task 'deploy remote'
 task :deploy do
-  sh 'git commit -am "more"'
+  sh 'git add --all'
+  sh 'git commit -m "more"'
   sh 'git push origin master'
   sh "ssh itang@haoshuju.net 'source .profile;cd workspace/hsj;git pull;./hsj rerun || ./hsj rerun'"
 end
