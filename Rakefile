@@ -58,7 +58,7 @@ task :mock do
   sh %q(crul post http://localhost:3000/api/dict -H 'AUTH:test;test2015_bad' -d '{"from":"hello","to":"nihao"}')
 end
 
-task 'deploy remote'
+desc 'deploy remote'
 task :deploy do
   sh 'git add --all'
   sh 'git commit -m "more"'
