@@ -205,6 +205,14 @@ module Haoshuju
                     title: "Mesos上的复杂数据分析",
                     created_at: "2015-09-25 11:01"
 
+          rs << Read.new "http://alfonsogarciacaro.github.io/fsharp-for-scala-developers/#/",
+                    title: "F# for Scala Developers",
+                    created_at: "2015-09-27 09:40"
+
+          rs << Read.new "https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html",
+                    title: "Al&#39;s Cassandra 2.1 tuning guide",
+                    created_at: "2015-09-27 09:53"
+
         end.reverse
       end
     end
