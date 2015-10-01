@@ -1,3 +1,5 @@
+require "redis"
+
 class WelcomeController < BaseController
   actions :index
 
@@ -16,6 +18,9 @@ class WelcomeController < BaseController
     @reads = injector.read_service.find_reads
     @dicts = injector.dict_service.find_all(Pager.new)
     @build_time = get_build_time
+    @counter = Redis::Client.open do |client|
+      client.incr("hsj:counter:index")
+    end
 
     respond_to do |format|
       format.html { render "index" }

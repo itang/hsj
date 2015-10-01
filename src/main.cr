@@ -14,6 +14,13 @@ RUN_MODE = ENV["RUN_MODE"]? || "production" # development | production
 APPPATH = File.expand_path($0)
 puts "$0: #{$0}, app_path: #{APPPATH}, work dir: #{WD}, port: #{PORT}, run mode: #{RUN_MODE}"
 
+if RUN_MODE == "development" || ENV["MOCK_REDIS"]? == "true"
+  puts "INFO: Start mock Redis server..."
+  fork do
+    system "redis-server"
+  end
+end
+
 App.settings.configure do |conf|
   conf.environment = RUN_MODE
   conf.static_dirs = ["/assets"]

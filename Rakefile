@@ -36,9 +36,9 @@ desc 'run'
 task :run, [:mode] => %w[build_debug] do |_t, args|
   mode = args[:mode] || ENV['mode']
   if (mode || "").start_with? "d"
-    sh 'RUN_MODE=development ./main_debug'
+    sh 'RUN_MODE=development MOCK_REDIS=true ./main_debug'
   else
-    sh './main_debug'
+    sh 'MOCK_REDIS=true ./main_debug'
   end
 end
 
