@@ -1,0 +1,10 @@
+name: haoshuju
+version: 0.0.1
+
+dependencies:
+  amethyst:
+    github: Codcore/amethyst
+    branch: master
+  sqlite3:
+    github: manastech/crystal-sqlite3
+    branch: master
