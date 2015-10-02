@@ -11,3 +11,5 @@ dependencies:
   redis:
     github: manastech/crystal_redis
     branch: master
+
+# stefanwille/crystal-redis

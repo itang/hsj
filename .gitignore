@@ -11,6 +11,7 @@ logs/
 .build
 
 *.db
-dump.rdb 
+
+dump.rdb
 
 .shards

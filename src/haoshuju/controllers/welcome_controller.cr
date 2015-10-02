@@ -1,5 +1,3 @@
-require "redis"
-
 class WelcomeController < BaseController
   actions :index
 
@@ -8,6 +6,7 @@ class WelcomeController < BaseController
   @languages = Array(Language).new
   @reads = [] of Read
   @dicts = Page.new(0_i64, [] of Dict, Pager.new)
+  @pv = PageCounter.new(0, 0)
 
   view "index", "#{__DIR__}/../views/welcome"
   def index
@@ -18,9 +17,7 @@ class WelcomeController < BaseController
     @reads = injector.read_service.find_reads
     @dicts = injector.dict_service.find_all(Pager.new)
     @build_time = get_build_time
-    @counter = Redis::Client.open do |client|
-      client.incr("hsj:counter:index")
-    end
+    @pv = injector.counter_service.incr_pv("index")
 
     respond_to do |format|
       format.html { render "index" }
