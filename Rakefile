@@ -58,12 +58,20 @@ task :mock do
   sh %q(crul post http://localhost:3000/api/dict -H 'AUTH:test;test2015_bad' -d '{"from":"hello","to":"nihao"}')
 end
 
-desc 'deploy remote'
-task :deploy do
+desc 'commit all'
+task :commit_all do
   sh 'git add --all'
   sh 'git commit -m "more"'
   sh 'git push origin master'
+end
+
+desc 'restart remote'
+task :restart_remote do
   sh "ssh itang@haoshuju.net 'source .profile;cd workspace/hsj;git pull;./hsj rerun || ./hsj rerun'"
+end
+
+desc 'deploy remote'
+task :deploy => %w[commit_all restart_remote] do
 end
 
 desc 'dev'
