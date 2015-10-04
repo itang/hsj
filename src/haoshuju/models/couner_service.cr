@@ -12,23 +12,25 @@ module Haoshuju::Models
     SUM_KEY = "hsj:counter:sum"
     DAILY_KEY = "hsj:counter:daily"
 
-    # def hincr(path, field, redis = client, number = 1)
-    #   Redis.open do |redis|
-    #     redis.command("hincrby", path, field, number)
-    #   end
-    # end
-    #
-    # def hget(path, field, redis = client)
-    #   Redis.open do |redis|
-    #     redis.hget(path, field)
-    #   end
-    # end
+    def hincr(path, field, redis = client, number = 1)
+      # Redis.open do |redis|
+      #   redis.command("hincrby", path, field, number)
+      # end
+      redis.hincrby(path, field, number)
+    end
+
+    def hget(path, field, redis = client)
+      # Redis.open do |redis|
+      #   redis.hget(path, field)
+      # end
+      redis.hget(path, field)
+    end
 
     def incr(path, redis = client, number = 1)
-      #redis.incr(path, number)
-      Redis.open do |redis|
-        redis.incr(path)
-      end
+      redis.incr(path, number)
+      # Redis.open do |redis|
+      #   redis.incr(path)
+      # end
     end
 
     def get(path, redis = client)
@@ -38,27 +40,27 @@ module Haoshuju::Models
     end
 
     def incr_pv(page, day = Time.now.to_s("%Y-%m-%d")): PageCounter
-      # sum = Redis::Future.new
-      # daily = Redis::Future.new
-      #
-      # responses = client.pipelined do |pipeline|
-      #   incr(SUM_KEY, page, pipeline)
-      #   incr(DAILY_KEY, page, pipeline)
-      #
-      #   sum = get(SUM_KEY, page, pipeline) as Redis::Future
-      #   daily = get(DAILY_KEY, page, pipeline) as Redis::Future
-      # end
-      #
-      # PageCounter.new(sum.value, daily.value)
-      sum = incr(SUM_KEY + ":" + page)
-      daily = incr("#{DAILY_KEY}:#{page}:#{Time.now.to_s("%Y-%m-%d")}")
-      PageCounter.new(sum, daily)
+      sum = Redis::Future.new
+      daily = Redis::Future.new
+
+      responses = client.pipelined do |pipeline|
+        hincr(SUM_KEY, page, pipeline)
+        hincr(DAILY_KEY, page, pipeline)
+
+        sum = hget(SUM_KEY, page, pipeline) as Redis::Future
+        daily = hget(DAILY_KEY, page, pipeline) as Redis::Future
+      end
+
+      PageCounter.new(sum.value, daily.value)
+      # sum = incr(SUM_KEY + ":" + page)
+      # daily = incr("#{DAILY_KEY}:#{page}:#{Time.now.to_s("%Y-%m-%d")}")
+      # PageCounter.new(sum, daily)
     end
 
     # TODO: 优化
     private def client
-      #Redis.new
-      #Redis::Client.new
+      Redis.new
+      # Redis::Client.new
     end
   end
 end

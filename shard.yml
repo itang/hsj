@@ -9,7 +9,7 @@ dependencies:
     github: manastech/crystal-sqlite3
     branch: master
   redis:
-    github: manastech/crystal_redis
+    github: stefanwille/crystal-redis
     branch: master
 
-# stefanwille/crystal-redis
+# manastech/crystal_redis

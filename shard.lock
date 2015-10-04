@@ -9,8 +9,8 @@ shards:
     commit: bb69613b93dd059f68d1b508a31f83ca6c8eaace
 
   redis:
-    github: manastech/crystal_redis
-    commit: 82c489a8835f8395a3591ae322eb2bf69e8403d6
+    github: stefanwille/crystal-redis
+    commit: 7f876841b0903f149efffb89d7ca78fba61da17e
 
   sqlite3:
     github: manastech/crystal-sqlite3
