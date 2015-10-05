@@ -213,6 +213,10 @@ module Haoshuju
                     title: "Al&#39;s Cassandra 2.1 tuning guide",
                     created_at: "2015-09-27 09:53"
 
+          rs << Read.new "http://blog.cloudera.com/blog/2015/09/kudu-new-apache-hadoop-storage-for-fast-analytics-on-fast-data/",
+                    title: "Kudu: New Apache Hadoop Storage for Fast Analytics on Fast Data | Cloudera Engineering Blog",
+                    created_at: "2015-10-05 10:04"
+
         end.reverse
       end
     end
