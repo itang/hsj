@@ -17,10 +17,13 @@ module Haoshuju
 
       post "/api/dict",     "dict#add_dict!"
 
+      get "/stat/counter/dailys", "counter#daily"
+
       register WelcomeController
       register DictController
       register ToolController
       register LangsController
+      register CounterController
     end
   end
 end

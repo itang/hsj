@@ -34,9 +34,7 @@ module Haoshuju::Models
     end
 
     def get(path, redis = client)
-      Redis.open do |redis|
-        redis.get(path)
-      end
+      redis.get(path)
     end
 
     def incr_pv(page, day = Time.now.to_s("%Y-%m-%d")): PageCounter
@@ -58,6 +56,10 @@ module Haoshuju::Models
       # sum = incr(SUM_KEY + ":" + page)
       # daily = incr("#{DAILY_KEY}:#{page}:#{Time.now.to_s("%Y-%m-%d")}")
       # PageCounter.new(sum, daily)
+    end
+
+    def find_dailys(page, redis = client)
+      redis.hgetall("hsj:counter:daily:#{page}")
     end
 
     # TODO: 优化
