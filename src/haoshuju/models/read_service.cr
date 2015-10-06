@@ -217,6 +217,9 @@ module Haoshuju
                     title: "Kudu: New Apache Hadoop Storage for Fast Analytics on Fast Data | Cloudera Engineering Blog",
                     created_at: "2015-10-05 10:04"
 
+          rs << Read.new "http://www.datanami.com/2015/10/05/how-uber-uses-spark-and-hadoop-to-optimize-customer-experience/",
+                    title: "How Uber Uses Spark and Hadoop to Optimize Customer Experience",
+                    created_at: "2015-10-06 09:22"
         end.reverse
       end
     end
