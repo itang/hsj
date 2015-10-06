@@ -220,6 +220,11 @@ module Haoshuju
           rs << Read.new "http://www.datanami.com/2015/10/05/how-uber-uses-spark-and-hadoop-to-optimize-customer-experience/",
                     title: "How Uber Uses Spark and Hadoop to Optimize Customer Experience",
                     created_at: "2015-10-06 09:22"
+
+          rs << Read.new "http://mp.weixin.qq.com/s?__biz=MjM5NjAxMzgwMA==&mid=208346354&idx=4&sn=539f93892a68cdfe0f231264f3b99f19",
+                    title: "分布计算 | 大数据机器学习系统研究进展",
+                    created_at: "2015-10-06 09:53"
+
         end.reverse
       end
     end
