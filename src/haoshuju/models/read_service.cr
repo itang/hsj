@@ -225,6 +225,10 @@ module Haoshuju
                     title: "分布计算 | 大数据机器学习系统研究进展",
                     created_at: "2015-10-06 09:53"
 
+          rs << Read.new "https://blog.lateral.io/2015/05/full-text-search-in-milliseconds-with-postgresql/",
+                    title: "Full text search in milliseconds with PostgreSQL - Lateral",
+                    created_at: "2015-10-07 08:47"
+
         end.reverse
       end
     end
