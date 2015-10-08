@@ -229,6 +229,10 @@ module Haoshuju
                     title: "Full text search in milliseconds with PostgreSQL - Lateral",
                     created_at: "2015-10-07 08:47"
 
+          rs << Read.new "http://yahoohadoop.tumblr.com/post/129872361846/large-scale-distributed-deep-learning-on-hadoop",
+                    title: "Large Scale Distributed Deep Learning on Hadoop... | Hadoop at Yahoo",
+                    created_at: "2015-10-08 22:42"
+
         end.reverse
       end
     end
