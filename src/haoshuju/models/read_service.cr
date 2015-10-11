@@ -233,6 +233,10 @@ module Haoshuju
                     title: "Large Scale Distributed Deep Learning on Hadoop... | Hadoop at Yahoo",
                     created_at: "2015-10-08 22:42"
 
+          rs << Read.new "http://jlordiales.me/2012/12/13/the-builder-pattern-in-practice/",
+                    title: "The builder pattern in practice (Java)",
+                    created_at: "2015-10-11 10:03"
+
         end.reverse
       end
     end
