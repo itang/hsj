@@ -235,7 +235,8 @@ module Haoshuju
 
           rs << Read.new "http://jlordiales.me/2012/12/13/the-builder-pattern-in-practice/",
                     title: "The builder pattern in practice (Java)",
-                    created_at: "2015-10-11 10:03"
+                    created_at: "2015-10-11 10:03",
+                    status: ReadStatus::Readed
 
         end.reverse
       end
