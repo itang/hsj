@@ -242,6 +242,10 @@ module Haoshuju
                     title: "Streaming Big Data: Storm, Spark and Samza",
                     created_at: "2015-10-12 11:53"
 
+          rs << Read.new "http://gank.io/post/560e15be2dca930e00da1083",
+                    title: "给 Android 开发者的 RxJava 详解",
+                    created_at: "2015-10-12 13:16"
+
         end.reverse
       end
     end
