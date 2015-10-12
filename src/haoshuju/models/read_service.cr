@@ -238,6 +238,10 @@ module Haoshuju
                     created_at: "2015-10-11 10:03",
                     status: ReadStatus::Readed
 
+          rs << Read.new "https://dzone.com/articles/streaming-big-data-storm-spark",
+                    title: "Streaming Big Data: Storm, Spark and Samza",
+                    created_at: "2015-10-12 11:53"
+
         end.reverse
       end
     end
