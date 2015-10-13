@@ -246,6 +246,14 @@ module Haoshuju
                     title: "给 Android 开发者的 RxJava 详解",
                     created_at: "2015-10-12 13:16"
 
+          rs << Read.new "http://finelydistributed.io/integration-tests-with-docker/",
+                    title: "Integration Testing with Docker and Scala",
+                    created_at: "2015-10-13 22:23"
+
+          rs << Read.new "https://medium.com/magnetis-backstage/rust-to-the-rescue-of-ruby-2067f5e1dc25",
+                    title: "Rust to the rescue (of Ruby) — Magnetis Backstage — Medium",
+                    created_at: "2015-10-13 22:24"
+
         end.reverse
       end
     end
