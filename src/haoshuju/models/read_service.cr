@@ -250,6 +250,10 @@ module Haoshuju
                     title: "Recipe: rsyslog + Redis + Logstash",
                     created_at: "2015-10-14 09:34"
 
+          rs << Read.new "https://nbaksalyar.github.io/2015/07/10/writing-chat-in-rust.html",
+                    title: "Rust in Detail: Writing Scalable Chat Service from Scratch",
+                    created_at: "2015-10-14 16:53"
+
         end.reverse
       end
     end
