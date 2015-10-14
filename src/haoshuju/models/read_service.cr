@@ -254,6 +254,15 @@ module Haoshuju
                     title: "Rust in Detail: Writing Scalable Chat Service from Scratch",
                     created_at: "2015-10-14 16:53"
 
+          rs << Read.new "http://finelydistributed.io/integration-tests-with-docker/",
+                    title: "Integration Testing with Docker and Scala",
+                    created_at: "2015-10-13 22:23"
+
+          rs << Read.new "https://medium.com/magnetis-backstage/rust-to-the-rescue-of-ruby-2067f5e1dc25",
+                    title: "Rust to the rescue (of Ruby) — Magnetis Backstage — Medium",
+                    created_at: "2015-10-13 22:24",
+                    status: ReadStatus::Readed
+
         end.reverse
       end
     end
