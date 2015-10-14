@@ -268,7 +268,7 @@ module Haoshuju
                     created_at: "2015-10-14 20:40"
 
           rs << Read.new "http://ricardomartins.cc/2015/10/12/practical_differences_between_rust_closures_and_functions/",
-                    title "Practical differences between Rust closures and functions",
+                    title: "Practical differences between Rust closures and functions",
                     created_at: "2015-10-14 22:57"
 
         end.reverse
