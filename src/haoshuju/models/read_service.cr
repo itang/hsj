@@ -246,6 +246,10 @@ module Haoshuju
                     title: "给 Android 开发者的 RxJava 详解",
                     created_at: "2015-10-12 13:16"
 
+          rs << Read.new "https://dzone.com/articles/recipe-rsyslog-redis-logstash-1",
+                    title: "Recipe: rsyslog + Redis + Logstash",
+                    created_at: "2015-10-14 09:34"
+
         end.reverse
       end
     end
