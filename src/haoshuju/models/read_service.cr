@@ -263,6 +263,10 @@ module Haoshuju
                     created_at: "2015-10-13 22:24",
                     status: ReadStatus::Readed
 
+          rs << Read.new "http://www.wbrecom.com/?hmsr=toutiao.io&p=540&utm_medium=toutiao.io&utm_source=toutiao.io",
+                    title: "微博推荐架构的演进",
+                    created_at: "2015-10-14 20:40"
+
         end.reverse
       end
     end
