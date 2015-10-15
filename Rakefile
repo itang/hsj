@@ -65,13 +65,18 @@ task :commit_all do
   sh 'git push origin master'
 end
 
+desc 'upload binary'
+task :upload_binary => :build do
+  sh 'scp main itang@haoshuju.net:workspace/hsj/'
+end
+
 desc 'restart remote'
 task :restart_remote do
-  sh "ssh itang@haoshuju.net 'source .profile;cd workspace/hsj;git pull;./hsj rerun || ./hsj rerun'"
+  sh "./hsj rerun'"
 end
 
 desc 'deploy remote'
-task :deploy => %w[commit_all restart_remote] do
+task :deploy => %w[commit_all upload_binary restart_remote] do
 end
 
 desc 'dev'
