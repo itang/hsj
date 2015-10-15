@@ -73,6 +73,7 @@ end
 desc 'upload binary'
 task :upload_binary => :build do
   sh 'scp main itang@haoshuju.net:workspace/hsj/'
+  sh 'scp .build itang@haoshuju.net:workspace/hsj/'
 end
 
 desc 'start remote'
