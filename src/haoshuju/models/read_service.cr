@@ -271,6 +271,10 @@ module Haoshuju
                     title: "Practical differences between Rust closures and functions",
                     created_at: "2015-10-14 22:57"
 
+          rs << Read.new "http://slides.com/paulschoenfelder/elixirconf2015-release-management#/",
+                    title: "Release Management with ExRM and Conform by Paul Schoenfelder",
+                    created_at: "2015-10-16 18:10"
+
         end.reverse
       end
     end
