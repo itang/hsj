@@ -275,6 +275,10 @@ module Haoshuju
                     title: "Release Management with ExRM and Conform by Paul Schoenfelder",
                     created_at: "2015-10-16 18:10"
 
+          rs << Read.new "http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html",
+                    title: "Full-Stack Redux Tutorial",
+                    created_at: "2015-10-16 18:16"
+
         end.reverse
       end
     end
