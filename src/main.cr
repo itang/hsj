@@ -17,7 +17,11 @@ puts "$0: #{$0}, app_path: #{APPPATH}, work dir: #{WD}, port: #{PORT}, run mode:
 if RUN_MODE == "development" || ENV["MOCK_REDIS"]? == "true"
   puts "INFO: Start mock Redis server..."
   fork do
-    system "redis-server"
+    begin
+      system "redis-server"
+    rescue ex : Exception
+      puts "WARN: #{ex}"
+    end
   end
 end
 
