@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Haoshuju.net</title>
+  <link rel="stylesheet" href="/vendor/writ.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <h1>Haoshuju</h1>
+  <hr/>
+  <h2>Counter</h2>
+  <div id="elm-main"></div>
+
+  <footer>
+    <hr/>
+    <div>Version: <%= version %></div>
+  </footer>
+  <script src="/js/counter.js"></script>
+  <script>
+  var elmDiv = document.getElementById('elm-main')
+    , elmApp = Elm.embed(Elm.Counter, elmDiv);
+  </script>
+</body>
+</html>
