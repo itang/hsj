@@ -278,6 +278,10 @@ module Haoshuju
           rs << Read.new "http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html",
                          title: "Full-Stack Redux Tutorial",
                          created_at: "2015-10-16 18:16"
+
+          rs << Read.new "https://linux.cn/article-6416-1.html?utm_source=weibo&utm_medium=weibo",
+                         title: "使用 Ansible 高效交付 Docker 容器-技术 ◆ 学习|Linux.中国-开源社区",
+                         created_at: "2015-10-17 10:20"
         end.reverse
       end
     end
