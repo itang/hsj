@@ -22,7 +22,7 @@ module Haoshuju
         @app.call(request)
       end
 
-      private def auth?(auth_str: String?): Bool
+      private def auth?(auth_str : String?) : Bool
         if auth_str
           auth = auth_str.split(TOKEN_SEPARATOR)
           if auth.size == 2

@@ -9,7 +9,7 @@ module Haoshuju::Models
   end
 
   class CounterService
-    SUM_KEY = "hsj:counter:sum"
+    SUM_KEY   = "hsj:counter:sum"
     DAILY_KEY = "hsj:counter:daily"
 
     def hincr(path, field, redis = client, number = 1)
@@ -28,6 +28,7 @@ module Haoshuju::Models
 
     def incr(path, redis = client, number = 1)
       redis.incr(path, number)
+
       # Redis.open do |redis|
       #   redis.incr(path)
       # end
@@ -37,20 +38,20 @@ module Haoshuju::Models
       redis.get(path)
     end
 
-    def incr_pv(page, day = Time.now.to_s("%Y-%m-%d")): PageCounter
+    def incr_pv(page, day = Time.now.to_s("%Y-%m-%d")) : PageCounter
       sum = Redis::Future.new
       daily = Redis::Future.new
 
       responses = client.pipelined do |pipeline|
-        hincr(SUM_KEY, page, pipeline)
+                    hincr(SUM_KEY, page, pipeline)
 
-        dp = "#{DAILY_KEY}:#{page}"
-        df = Time.now.to_s("%Y-%m-%d")
-        hincr(dp, df, pipeline)
+                    dp = "#{DAILY_KEY}:#{page}"
+                    df = Time.now.to_s("%Y-%m-%d")
+                    hincr(dp, df, pipeline)
 
-        sum = hget(SUM_KEY, page, pipeline) as Redis::Future
-        daily = hget(dp, df, pipeline) as Redis::Future
-      end
+                    sum = hget(SUM_KEY, page, pipeline) as Redis::Future
+                    daily = hget(dp, df, pipeline) as Redis::Future
+                  end
 
       PageCounter.new(sum.value, daily.value)
       # sum = incr(SUM_KEY + ":" + page)
@@ -65,6 +66,7 @@ module Haoshuju::Models
     # TODO: 优化
     private def client
       Redis.new
+
       # Redis::Client.new
     end
   end

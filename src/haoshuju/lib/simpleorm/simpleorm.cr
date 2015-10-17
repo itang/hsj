@@ -18,7 +18,7 @@ module Haoshuju
         end
       end
 
-      def t(v, _type: T.class):T
+      def t(v, _type : T.class):T
         if v.is_a?(T)
           v
         end
@@ -44,13 +44,13 @@ module Haoshuju
 
         abstract def init_data!
 
-        abstract def row_mapper(rs: SQLite3::ResultSet, index: Int32) : T
+        abstract def row_mapper(rs : SQLite3::ResultSet, index : Int32) : T
 
-        abstract def row_unmapper(t: T) : Array(Tuple(String, EVType))
+        abstract def row_unmapper(t : T) : Array(Tuple(String, EVType))
 
-        abstract def table_name: String
+        abstract def table_name : String
 
-        def save!(t: T)
+        def save!(t : T)
           ts = row_unmapper(t)
           ts = ts.select {|x| x[0] != "id"}
           values = ts.map {|x| x[1] }
@@ -73,17 +73,17 @@ module Haoshuju
           end
         end
 
-        def save!(ts: Array(T))
+        def save!(ts : Array(T))
           ts.map {|t| save!(t)}
         end
 
-        def id_value(t: T) : D?
+        def id_value(t : T) : D?
           if t.responds_to? :id
             t.id as D?
           end
         end
 
-        def is_new?(t: T): Bool
+        def is_new?(t : T): Bool
           if t.responds_to? :id
             t.id.nil?
           else
@@ -91,26 +91,26 @@ module Haoshuju
           end
         end
 
-        def delete!(t: T)
+        def delete!(t : T)
           id = id_vaue(t)
           if id
             delete_by_id(id)
           end
         end
 
-        def delete!(ts: Array(T))
+        def delete!(ts : Array(T))
           ts.map {|t| delete!(t)}
         end
 
-        def delete!(id: D)
+        def delete!(id : D)
           with_db(&.execute("delete from #{table_name} where id = ?", id))
         end
 
-        def exists(id: D)
+        def exists(id : D)
           !find_by_id(id).nil?
         end
 
-        def find_by_id(id: D): T?
+        def find_by_id(id : D): T?
           find_one("select * from #{table_name} where id = ?", [id])
         end
 
@@ -129,7 +129,7 @@ module Haoshuju
           find_by_sql("select * from #{table_name} order by id desc").map_with_index {|x, i| row_mapper(x, i) }
         end
 
-        def find_all(pager: Pager): Page
+        def find_all(pager : Pager): Page
           total = count()
 
           psql = pager_to_sql(pager)
@@ -140,7 +140,7 @@ module Haoshuju
           Page.new(total, items, pager)
         end
 
-        def find_all(sorter: Sorter): Array(T)
+        def find_all(sorter : Sorter): Array(T)
           total = count()
 
           ssql = sorter_to_sql(sorter)
@@ -148,7 +148,7 @@ module Haoshuju
           find_by_sql(sql).map_with_index {|x, i| row_mapper(x, i) }
         end
 
-        def find_all(ids: Array(Int64)): Array(T)
+        def find_all(ids : Array(Int64)): Array(T)
           find_by_sql("select * from #{table_name} where id in (#{array_as_inclause(ids)})").map_with_index {|x, i| row_mapper(x, i) }
         end
 
@@ -161,7 +161,7 @@ module Haoshuju
           end
         end
 
-        private def array_as_inclause(arr: (Array(Int64) | Array(String)))
+        private def array_as_inclause(arr : (Array(Int64) | Array(String)))
           if typeof(arr) == Array(32)
             arr.map(&.to_s).join(", ")
           else
@@ -187,7 +187,7 @@ module Haoshuju
           with_db(&.query(sql, values))
         end
 
-        private def wrap_field_falue(v: String): String
+        private def wrap_field_falue(v : String): String
           v.gsub(/'/, "''")
         end
 

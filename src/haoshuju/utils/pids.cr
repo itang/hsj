@@ -5,7 +5,7 @@ module Haoshuju
     class Pids
       getter file
 
-      def initialize(@file="app.pid")
+      def initialize(@file = "app.pid")
         at_exit do
           self.delete_file!
         end

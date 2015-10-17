@@ -11,17 +11,17 @@ module Haoshuju::Libs::Data
   class Sorter
     getter sort, dir
 
-    def initialize(@sort="id" : String,
-                   @dir=Dir::DESC : Dir)
+    def initialize(@sort = "id" : String,
+                   @dir = Dir::DESC : Dir)
     end
   end
 
   class Pager
     getter page, size, sorter
 
-    def initialize(@page=1_u32 : UInt32,
-                   @size=10_u32 : UInt32,
-                   @sorter=Sorter.new : Sorter)
+    def initialize(@page = 1_u32 : UInt32,
+                   @size = 10_u32 : UInt32,
+                   @sorter = Sorter.new : Sorter)
     end
 
     def starts

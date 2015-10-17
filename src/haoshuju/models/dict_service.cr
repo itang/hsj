@@ -6,7 +6,7 @@ module Haoshuju
       def initialize
       end
 
-      def initialize(@from: String, @to: String, @from_lang="en": String, @to_lang="cn": String, @created_at="": String, @times=1: Int32)
+      def initialize(@from : String, @to : String, @from_lang = "en" : String, @to_lang = "cn" : String, @created_at = "" : String, @times = 1 : Int32)
       end
     end
 
@@ -17,7 +17,7 @@ module Haoshuju
 
       def ddl_sql
         ["drop table if exists #{table_name}",
-        "create table #{table_name}(
+         "create table #{table_name}(
           `id` INTEGER PRIMARY KEY AUTOINCREMENT,
           `from` VARCHAR(255) not null,
           `to` varchar(1000) not null,
@@ -36,7 +36,7 @@ module Haoshuju
         end
       end
 
-     def row_mapper(rs, _index)
+      def row_mapper(rs, _index)
         Dict.new.tap do |d|
           d.id = t(rs["id"], Int64)
           d.from = t(rs["from"], String)
@@ -49,14 +49,14 @@ module Haoshuju
       end
 
       def row_unmapper(dict)
-         [{"id", dict.id},
+        [{"id", dict.id},
          {"from", dict.from},
          {"to", dict.to},
          {"from_lang", dict.from_lang},
          {"to_lang", dict.to_lang},
          {"created_at", dict.created_at},
          {"times", dict.times}]
-       end
+      end
 
       def init_data!
         dict1 = Dict.new "hello", "int. 喂；哈罗", created_at: "2015-07-08 14:58:01"
@@ -68,7 +68,7 @@ module Haoshuju
     end
 
     class DictService < DictDAO
-      def process_dict!(dict: Dict)
+      def process_dict!(dict : Dict)
         old = find_one_by_property("from", dict.from)
         if old
           puts "INFO: update dict"

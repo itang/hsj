@@ -9,6 +9,7 @@ class WelcomeController < BaseController
   @pv = PageCounter.new(0, 0)
 
   view "index", "#{__DIR__}/../views/welcome"
+
   def index
     @name = "Itang"
     @weibos = injector.weibo_service.find_weibos

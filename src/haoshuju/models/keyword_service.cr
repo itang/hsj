@@ -1,6 +1,7 @@
 class Keyword
   property name, content, hots
-  def initialize(@name: String, @content: String, @hots=0: Int)
+
+  def initialize(@name : String, @content : String, @hots = 0 : Int)
   end
 end
 
