@@ -9,34 +9,22 @@ import Http
 import Json.Decode as Json exposing ((:=))
 import Task exposing (..)
 
-main : Signal Htm
-  StartApp.Simple.start
-    {model = init
-    , update = update
-    , view = view
-    }
+-- MAIN
+main : Signal Html
+main = StartApp.Simple.start { model = init , update = update, view = view }
 
 
 -- MODEL
+type alias DayCounter = { day : String , counter : Int }
 
-type alias DayCounter =
-  { day: String
-  , counter : Int
-  }
-
-type alias Model =
-  List DayCounter
+type alias Model = List DayCounter
 
 
 init : Model
-
--- TODO
-init =
-  [{ day = "2015-10-17", counter = 1}]
+init = [{ day = "2015-10-17", counter = 1}] -- TODO
 
 
 -- UPDATE
-
 type Action = Show DayCounter
 
 update : Action -> Model -> Model
@@ -46,7 +34,6 @@ update action model =
 
 
 -- VIEW
-
 view : Signal.Address Action -> Model -> Html
 view address model =
   ul [ class "days" ] (List.map (dayItem address) model)
