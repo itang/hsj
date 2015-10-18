@@ -282,6 +282,10 @@ module Haoshuju
           rs << Read.new "https://linux.cn/article-6416-1.html?utm_source=weibo&utm_medium=weibo",
                          title: "使用 Ansible 高效交付 Docker 容器-技术 ◆ 学习|Linux.中国-开源社区",
                          created_at: "2015-10-17 10:20"
+
+          rs << Read.new "http://xyclade.github.io/MachineLearning/?__scoop_post=2d9a89c0-7190-11e5-ae6e-001018304b75&__scoop_topic=1906679",
+                         title: "Machine Learning for Developers by Mike de Waard",
+                         created_at: "2015-10-18 09:23"
         end.reverse
       end
     end

@@ -9,9 +9,7 @@ import Http
 import Json.Decode as Json exposing ((:=))
 import Task exposing (..)
 
-main : Signal Html
-
-main =
+main : Signal Htm
   StartApp.Simple.start
     {model = init
     , update = update
