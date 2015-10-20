@@ -82,7 +82,7 @@ task :start_remote do
 end
 
 desc 'deploy remote'
-task :deploy => %w[commit_all stop_remote upload_binary start_remote] do
+  task :deploy => %w[commit_all stop_remote upload_binary start_remote] do
 end
 
 desc 'dev'
