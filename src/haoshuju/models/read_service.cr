@@ -288,7 +288,7 @@ module Haoshuju
                          created_at: "2015-10-18 09:23"
 
           rs << Read.new "http://thenewstack.io/building-streaming-data-hub-elasticsearch-kafka-cassandra",
-                         title: "",
+                         title: "Building a Streaming Data Hub with Elasticsearch, Kafka and Cassandra",
                          created_at: "2015-10-22 16:46"
         end.reverse
       end
