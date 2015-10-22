@@ -286,6 +286,10 @@ module Haoshuju
           rs << Read.new "http://xyclade.github.io/MachineLearning/?__scoop_post=2d9a89c0-7190-11e5-ae6e-001018304b75&__scoop_topic=1906679",
                          title: "Machine Learning for Developers by Mike de Waard",
                          created_at: "2015-10-18 09:23"
+
+          rs << Read.new "http://thenewstack.io/building-streaming-data-hub-elasticsearch-kafka-cassandra",
+                         title: "",
+                         created_at: "2015-10-22 16:46"
         end.reverse
       end
     end
