@@ -290,6 +290,10 @@ module Haoshuju
           rs << Read.new "http://thenewstack.io/building-streaming-data-hub-elasticsearch-kafka-cassandra",
                          title: "Building a Streaming Data Hub with Elasticsearch, Kafka and Cassandra",
                          created_at: "2015-10-22 16:46"
+
+          rs << Read.new "http://radar.oreilly.com/2015/10/swarm-v-fleet-v-kubernetes-v-mesos.html",
+                         title: "Swarm v. Fleet v. Kubernetes v. Mesos - O'Reilly Radar",
+                         created_at: "2015-10-24 00:14"
         end.reverse
       end
     end
