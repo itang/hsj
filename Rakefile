@@ -89,10 +89,3 @@ desc 'dev'
 task :dev do
   sh 'guard'
 end
-
-namespace :elm do
-  desc 'build elm'
-  task :build do
-    sh 'cd elm;elm-make Counter.elm --output ../assets/js/counter.js'
-  end
-end
