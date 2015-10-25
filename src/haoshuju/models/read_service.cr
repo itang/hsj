@@ -294,6 +294,10 @@ module Haoshuju
           rs << Read.new "http://radar.oreilly.com/2015/10/swarm-v-fleet-v-kubernetes-v-mesos.html",
                          title: "Swarm v. Fleet v. Kubernetes v. Mesos - O'Reilly Radar",
                          created_at: "2015-10-24 00:14"
+
+          rs << Read.new "http://aosabook.org/en/ghc.html",
+                         title: "The Architecture of Open Source Applications (Volume 2): The Glasgow Haskell Compiler",
+                         created_at: "2015-10-25 20:22"
         end.reverse
       end
     end
