@@ -298,6 +298,13 @@ module Haoshuju
           rs << Read.new "http://aosabook.org/en/ghc.html",
                          title: "The Architecture of Open Source Applications (Volume 2): The Glasgow Haskell Compiler",
                          created_at: "2015-10-25 20:22"
+
+          rs << Read.new "http://www.mattkeeter.com/projects/constraints/",
+                         title: "Constraint Solver - Haskell",
+                         created_at: "2015-10-26 10:12"
+          rs << Read.new "https://pascalhertleif.de/artikel/good-practices-for-writing-rust-libraries/",
+                         title: "Good Practices for Writing Rust Libraries ",
+                         created_at: "2015-10-26 10:16"
         end.reverse
       end
     end
