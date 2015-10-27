@@ -58,6 +58,11 @@ task :mock do
   sh %q(crul post http://localhost:3000/api/dict -H 'AUTH:test;test2015_bad' -d '{"from":"hello","to":"nihao"}')
 end
 
+desc 'format code'
+task :fmt do
+  sh 'crystal tool format'
+end
+
 desc 'commit all'
 task :commit_all do
   sh 'git add --all'
@@ -82,7 +87,7 @@ task :start_remote do
 end
 
 desc 'deploy remote'
-task :deploy => %w[commit_all stop_remote upload_binary start_remote] do
+task :deploy => %w[fmt commit_all stop_remote upload_binary start_remote] do
 end
 
 desc 'dev'
