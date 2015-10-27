@@ -305,6 +305,10 @@ module Haoshuju
           rs << Read.new "https://pascalhertleif.de/artikel/good-practices-for-writing-rust-libraries/",
                          title: "Good Practices for Writing Rust Libraries ",
                          created_at: "2015-10-26 10:16"
+
+          rs << Read.new "http://colah.github.io/posts/2015-08-Understanding-LSTMs/",
+                         title: "Understanding LSTM Networks -- colah's blog",
+                         created_at: "2015-10-27 09:44"
         end.reverse
       end
     end
