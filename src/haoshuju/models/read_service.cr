@@ -313,6 +313,10 @@ module Haoshuju
           rs << Read.new "https://vimeo.com/143572750",
             title: "Fastparse at Parsing@SLE 2015 on Vimeo",
             created_at: "2015-10-27 09:54"
+
+          rs << Read.new "http://chimera.labs.oreilly.com/books/1230000000545/index.html",
+            title: "High Performance Browser Networking",
+            created_at: "2015-10-30 10:59"
         end.reverse
       end
     end
