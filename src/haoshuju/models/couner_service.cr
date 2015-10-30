@@ -43,15 +43,15 @@ module Haoshuju::Models
       daily = Redis::Future.new
 
       responses = client.pipelined do |pipeline|
-                    hincr(SUM_KEY, page, pipeline)
+        hincr(SUM_KEY, page, pipeline)
 
-                    dp = "#{DAILY_KEY}:#{page}"
-                    df = Time.now.to_s("%Y-%m-%d")
-                    hincr(dp, df, pipeline)
+        dp = "#{DAILY_KEY}:#{page}"
+        df = Time.now.to_s("%Y-%m-%d")
+        hincr(dp, df, pipeline)
 
-                    sum = hget(SUM_KEY, page, pipeline) as Redis::Future
-                    daily = hget(dp, df, pipeline) as Redis::Future
-                  end
+        sum = hget(SUM_KEY, page, pipeline) as Redis::Future
+        daily = hget(dp, df, pipeline) as Redis::Future
+      end
 
       PageCounter.new(sum.value, daily.value)
       # sum = incr(SUM_KEY + ":" + page)

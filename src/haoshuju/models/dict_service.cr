@@ -17,7 +17,7 @@ module Haoshuju
 
       def ddl_sql
         ["drop table if exists #{table_name}",
-         "create table #{table_name}(
+          "create table #{table_name}(
           `id` INTEGER PRIMARY KEY AUTOINCREMENT,
           `from` VARCHAR(255) not null,
           `to` varchar(1000) not null,
@@ -50,12 +50,12 @@ module Haoshuju
 
       def row_unmapper(dict)
         [{"id", dict.id},
-         {"from", dict.from},
-         {"to", dict.to},
-         {"from_lang", dict.from_lang},
-         {"to_lang", dict.to_lang},
-         {"created_at", dict.created_at},
-         {"times", dict.times}]
+          {"from", dict.from},
+          {"to", dict.to},
+          {"from_lang", dict.from_lang},
+          {"to_lang", dict.to_lang},
+          {"created_at", dict.created_at},
+          {"times", dict.times}]
       end
 
       def init_data!
