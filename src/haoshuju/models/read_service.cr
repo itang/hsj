@@ -317,6 +317,10 @@ module Haoshuju
           rs << Read.new "http://chimera.labs.oreilly.com/books/1230000000545/index.html",
             title: "High Performance Browser Networking",
             created_at: "2015-10-30 10:59"
+
+          rs << Read.new "http://jadpole.github.io/arcaders/arcaders-1-9/",
+            title: "ArcadeRS 1.9: Main menu",
+            created_at: "2015-10-31 09:07"
         end.reverse
       end
     end
