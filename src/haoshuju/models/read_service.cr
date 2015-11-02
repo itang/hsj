@@ -325,6 +325,10 @@ module Haoshuju
           rs << Read.new "http://ochrons.github.io/sjs2/",
             title: "Scala.js - Home",
             created_at: "2015-10-31 22:32"
+
+          rs << Read.new "http://pgsqlcn.com/",
+            title: "PostgreSQL 数据库文档 &mdash; PostgreSQL 数据库文档",
+            created_at: "2015-11-02 10:32"
         end.reverse
       end
     end
