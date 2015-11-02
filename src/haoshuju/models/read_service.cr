@@ -330,9 +330,17 @@ module Haoshuju
             title: "PostgreSQL 数据库文档 &mdash; PostgreSQL 数据库文档",
             created_at: "2015-11-02 10:32"
 
+          rs << Read.new "http://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html",
+            title: "String vs &str in Rust functions",
+            created_at: "2015-11-02 12:03"
+
           rs << Read.new "http://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html",
             title: "Creating a Rust function that accepts String or &str",
             created_at: "2015-11-02 11:59"
+
+          rs << Read.new "http://hermanradtke.com/2015/05/29/creating-a-rust-function-that-returns-string-or-str.html",
+            title: "Creating a Rust function that returns a &str or String",
+            created_at: "2015-11-02 12:02"
         end.reverse
       end
     end
