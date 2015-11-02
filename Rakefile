@@ -77,6 +77,7 @@ end
 
 desc 'upload binary'
 task :upload_binary => :build do
+  sh 'scp .build itang@haoshuju.net:workspace/hsj/'
   sh 'scp main itang@haoshuju.net:workspace/hsj/'
   sh "ssh itang@haoshuju.net 'cd workspace/hsj;git pull'"
 end
