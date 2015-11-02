@@ -329,6 +329,10 @@ module Haoshuju
           rs << Read.new "http://pgsqlcn.com/",
             title: "PostgreSQL 数据库文档 &mdash; PostgreSQL 数据库文档",
             created_at: "2015-11-02 10:32"
+
+          rs << Read.new "http://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html",
+            title: "Creating a Rust function that accepts String or &str",
+            created_at: "2015-11-02 11:59"
         end.reverse
       end
     end
