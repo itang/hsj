@@ -332,7 +332,8 @@ module Haoshuju
 
           rs << Read.new "http://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html",
             title: "String vs &str in Rust functions",
-            created_at: "2015-11-02 12:03"
+            created_at: "2015-11-02 12:03",
+            status: ReadStatus::Readed
 
           rs << Read.new "http://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html",
             title: "Creating a Rust function that accepts String or &str",
