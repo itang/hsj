@@ -342,7 +342,8 @@ module Haoshuju
 
           rs << Read.new "http://hermanradtke.com/2015/05/29/creating-a-rust-function-that-returns-string-or-str.html",
             title: "Creating a Rust function that returns a &str or String",
-            created_at: "2015-11-02 12:02"
+            created_at: "2015-11-02 12:02",
+            status: ReadStatus::Readed
 
           rs << Read.new "http://axgle.github.io/rhg/",
             title: "Ruby Hacking Guide中文版",
