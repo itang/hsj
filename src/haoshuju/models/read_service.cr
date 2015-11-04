@@ -356,6 +356,9 @@ module Haoshuju
           rs << Read.new "https://docs.google.com/presentation/d/1ySMGJqK9yKtx5JX6n7w8j8srkgCC9YdCFKPXKLZ6Fy4/edit#slide=id.g7087fdf69_0_64",
             title: "Rust Lifetimes - Google幻灯片",
             created_at: "2015-11-02 19:31"
+          rs << Read.new "https://scotch.io/tutorials/create-a-github-file-explorer-using-vue-js",
+            title: "Create a GitHub File Explorer Using Vue.js | Scotch",
+            created_at: "2015-11-04 09:41"
         end.reverse
       end
     end
