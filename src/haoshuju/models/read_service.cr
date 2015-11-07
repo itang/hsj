@@ -356,11 +356,17 @@ module Haoshuju
           rs << Read.new "https://docs.google.com/presentation/d/1ySMGJqK9yKtx5JX6n7w8j8srkgCC9YdCFKPXKLZ6Fy4/edit#slide=id.g7087fdf69_0_64",
             title: "Rust Lifetimes - Google幻灯片",
             created_at: "2015-11-02 19:31"
+<<<<<<< HEAD
 
           rs << Read.new "http://www.infoq.com/cn/news/2015/11/FiloDB-API-NoSQL",
             title: "FiloDB：用于大数据分析的分布式数据库",
             created_at: "2015-11-07 11:49",
             status: ReadStatus::Readed
+=======
+          rs << Read.new "https://scotch.io/tutorials/create-a-github-file-explorer-using-vue-js",
+            title: "Create a GitHub File Explorer Using Vue.js | Scotch",
+            created_at: "2015-11-04 09:41"
+>>>>>>> 27963be3dc5311c4fadd96b4ff86a8cfe2ebabae
         end.reverse
       end
     end
