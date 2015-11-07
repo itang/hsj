@@ -360,6 +360,7 @@ module Haoshuju
           rs << Read.new "https://scotch.io/tutorials/create-a-github-file-explorer-using-vue-js",
             title: "Create a GitHub File Explorer Using Vue.js | Scotch",
             created_at: "2015-11-04 09:41"
+
           rs << Read.new "http://www.infoq.com/cn/news/2015/11/FiloDB-API-NoSQL",
             title: "FiloDB：用于大数据分析的分布式数据库",
             created_at: "2015-11-07 11:49",
