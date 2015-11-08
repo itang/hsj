@@ -25,7 +25,9 @@ module Haoshuju
           Weibo.new("总裁精英", "职场中会遇到不同的上司，有对你有好感的，也有对你不好的。对待不同的上司，方式方法要不同。能成为其心腹的最佳方法就是投其所好，一定要言听计从，即使心中有不满的想法，也不要当众表达，要有忍耐之心，并进行换位思考。同时更要坚持自己内心的想法，做自己认为正确的事"),
           Weibo.new("cxr", "在重要与紧急的事情之间作选择，大多数的人一定只选紧急事项，结果就是一辈子被紧急事情追著跑，越来越累。有些人则是更关注重要事项，而放弃大部分的紧急事项，宁可让不致命的伤害发生，结果就是短时间内会有挫败，但体质越来越强，整体趋势往好的方向走。"),
           Weibo.new("cxr", "一直在做紧急的事，难得没有紧急的事时，你一定只想好好休息，没精力去做重要的事 ... 这导致：重.要.的.事.一.直.没.有.去.做.的.机.会."),
-          Weibo.new("yuanyf", "前端技术栈（2015版）：React + Redux + ES6（Babel） + webpack + npm + jss + autoprefixer + eslint + Elemental UI + karma")].reverse
+          Weibo.new("yuanyf", "前端技术栈（2015版）：React + Redux + ES6（Babel） + webpack + npm + jss + autoprefixer + eslint + Elemental UI + karma"),
+          Weibo.new("dengcaoyuan", "不管是 Erlang 的 process，Go 的 goroutine，还是 Akka 的 actor，都超不过 CPU 核数的限制，终究是如何合理地利用 CPU 核的问题。遇到 io，要阻塞在最小的粒度，这些语言都做专门的处理，即在遇 io 让出 CPU，不管在语言（实际也是库）还是库层面。Akka 会用 actor 包装 nio ，由 event 消息做切换。"),
+          Weibo.new("dengcaoyuan", "其实最关键的是 nio 是由 event 驱动的，即，注册关心的 io channel 后，数据来了可以被 event “唤醒”。如果没有这个，或者操作系统或者底层库牢牢地绑死了 CPU，就都无能为力了。 Erlang 的 io 库也是专门写的，好让它由 event 驱动。")].reverse
       end
     end
   end
