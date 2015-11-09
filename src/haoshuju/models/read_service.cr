@@ -365,6 +365,10 @@ module Haoshuju
             title: "FiloDB：用于大数据分析的分布式数据库",
             created_at: "2015-11-07 11:49",
             status: ReadStatus::Readed
+
+          rs << Read.new "https://tiancaiamao.gitbooks.io/go-internals/content/zh/05.5.html",
+            title: "抢占式调度 | 深入解析Go",
+            created_at: "2015-11-09 12:08"
         end.reverse
       end
     end
