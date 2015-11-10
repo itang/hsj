@@ -369,6 +369,10 @@ module Haoshuju
           rs << Read.new "https://tiancaiamao.gitbooks.io/go-internals/content/zh/05.5.html",
             title: "抢占式调度 | 深入解析Go",
             created_at: "2015-11-09 12:08"
+
+          rs << Read.new "http://www.randomhacks.net/2015/11/09/bare-metal-rust-cpu-port-io/",
+            title: "Bare Metal Rust: Low-level CPU I/O ports",
+            created_at: "2015-11-10 10:29"
         end.reverse
       end
     end
