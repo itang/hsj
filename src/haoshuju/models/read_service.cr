@@ -377,6 +377,10 @@ module Haoshuju
           rs << Read.new "http://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html",
             title: "A 360 Degree View of the Entire Netflix&nbsp;Stack - High Scalability -",
             created_at: "2015-11-11 10:30"
+
+          rs << Read.new "http://learningelixir.joekain.com/collecing-multiple-streams-in-elixir/",
+            title: "Collecting Multiple Streams of Work Into a Pool in Elixir",
+            created_at: "2015-11-11 10:35"
         end.reverse
       end
     end
