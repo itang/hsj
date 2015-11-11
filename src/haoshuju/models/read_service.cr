@@ -373,6 +373,10 @@ module Haoshuju
           rs << Read.new "http://www.randomhacks.net/2015/11/09/bare-metal-rust-cpu-port-io/",
             title: "Bare Metal Rust: Low-level CPU I/O ports",
             created_at: "2015-11-10 10:29"
+
+          rs << Read.new "http://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html",
+            title: "A 360 Degree View of the Entire Netflix&nbsp;Stack - High Scalability -",
+            created_at: "2015-11-11 10:30"
         end.reverse
       end
     end
