@@ -381,6 +381,10 @@ module Haoshuju
           rs << Read.new "http://learningelixir.joekain.com/collecing-multiple-streams-in-elixir/",
             title: "Collecting Multiple Streams of Work Into a Pool in Elixir",
             created_at: "2015-11-11 10:35"
+
+          rs << Read.new "https://medium.com/@acidflask/smoothing-data-with-julia-s-generated-functions-c80e240e05f3",
+            title: "Smoothing data with Julia’s @generated functions — Medium",
+            created_at: "2015-11-11 11:49"
         end.reverse
       end
     end
