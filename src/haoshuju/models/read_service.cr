@@ -393,6 +393,10 @@ module Haoshuju
           rs << Read.new "http://www-cs-students.stanford.edu/~blynn//haskell/brain.html",
             title: "Haskell - Get a Brain",
             created_at: "2015-11-12 22:01"
+
+          rs << Read.new "http://blog.commoncrawl.org/2015/08/july-2015-crawl-archive-available/",
+            title: "Rust: July 2015 Crawl Archive Available &#8211; Common Crawl &#8211; Blog",
+            created_at: "2015-11-12 22:43"
         end.reverse
       end
     end
