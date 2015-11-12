@@ -389,6 +389,10 @@ module Haoshuju
           rs << Read.new "http://leandromoreira.com.br/2015/10/12/how-to-optimize-nginx-configuration-for-http2-tls-ssl/",
             title: "How To Optimize Nginx Configuration for HTTP/2 TLS (SSL) | Leandro Moreira",
             created_at: "2015-11-12 21:40"
+
+          rs << Read.new "http://www-cs-students.stanford.edu/~blynn//haskell/brain.html",
+            title: "Haskell - Get a Brain",
+            created_at: "2015-11-12 22:01"
         end.reverse
       end
     end
