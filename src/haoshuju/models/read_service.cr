@@ -397,6 +397,14 @@ module Haoshuju
           rs << Read.new "http://blog.commoncrawl.org/2015/08/july-2015-crawl-archive-available/",
             title: "Rust: July 2015 Crawl Archive Available &#8211; Common Crawl &#8211; Blog",
             created_at: "2015-11-12 22:43"
+
+          rs << Read.new "https://codecoupled.org/2015/11/10/stack-machine-part-3/",
+            title: "Stack machine, part 3 - Burst into flames",
+            created_at: "2015-11-13 09:32"
+
+          rs << Read.new "http://www.cultivatehq.com/posts/phoenix-elm-6/",
+            title: "Phoenix with Elm - part 6",
+            created_at: "2015-11-13 14:06"
         end.reverse
       end
     end
