@@ -46,9 +46,9 @@
               <div class="ui segment">
                 <h2>语言喜好榜</h2>
                 <table>
-                  <% languages.each do |lang| %>
+                  <% languages.each_with_index do |lang, index| %>
                     <tr>
-                      <td><%= lang.name %></td>
+                      <td <% if index < 3 %>class="level-1"<% end %>><%= lang.name %></td>
                       <td><a href="<%= lang.url %>" target="_blank"><%= lang.url %></a></td>
                     </tr>
                   <% end %>
