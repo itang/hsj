@@ -405,6 +405,10 @@ module Haoshuju
           rs << Read.new "http://www.cultivatehq.com/posts/phoenix-elm-6/",
             title: "Phoenix with Elm - part 6",
             created_at: "2015-11-13 14:06"
+
+          rs << Read.new "http://www.michael-noll.com/blog/2014/05/27/kafka-storm-integration-example-tutorial/",
+            title: "Integrating Kafka and Storm: Code Examples and State of the Game - Michael G. Noll",
+            created_at: "2015-11-15 12:31"
         end.reverse
       end
     end
