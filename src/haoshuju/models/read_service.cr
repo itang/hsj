@@ -409,6 +409,10 @@ module Haoshuju
           rs << Read.new "http://www.michael-noll.com/blog/2014/05/27/kafka-storm-integration-example-tutorial/",
             title: "Integrating Kafka and Storm: Code Examples and State of the Game - Michael G. Noll",
             created_at: "2015-11-15 12:31"
+
+          rs << Read.new "http://eed3si9n.com/learning-scalaz/",
+            title: "learning Scalaz — learning Scalaz",
+            created_at: "2015-11-15 19:48"
         end.reverse
       end
     end
