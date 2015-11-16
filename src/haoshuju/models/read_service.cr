@@ -413,6 +413,9 @@ module Haoshuju
           rs << Read.new "http://eed3si9n.com/learning-scalaz/",
             title: "learning Scalaz — learning Scalaz",
             created_at: "2015-11-15 19:48"
+          rs << Read.new "http://thesecretlivesofdata.com/raft/#home",
+            title: "Raft",
+            created_at: "2015-11-16 19:44"
         end.reverse
       end
     end
