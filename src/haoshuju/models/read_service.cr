@@ -416,6 +416,10 @@ module Haoshuju
           rs << Read.new "http://thesecretlivesofdata.com/raft/#home",
             title: "Raft",
             created_at: "2015-11-16 19:44"
+
+          rs << Read.new "https://blog.skcript.com/asynchronous-io-in-rust-36b623e7b965",
+            title: "Asynchronous IO in Rust — Sudo vs Root — Medium",
+            created_at: "2015-11-17 09:53"
         end.reverse
       end
     end
