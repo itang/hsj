@@ -421,6 +421,10 @@ module Haoshuju
           rs << Read.new "https://softwaremill.com/comparing-akka-stream-scalaz-stream/",
             title: "Comparing akka-stream and scalaz-stream with code examples",
             created_at: "2015-11-17 21:00"
+
+          rs << Read.new "https://blog.skcript.com/asynchronous-io-in-rust-36b623e7b965",
+            title: "Asynchronous IO in Rust — Sudo vs Root — Medium",
+            created_at: "2015-11-17 09:53"
         end.reverse
       end
     end
