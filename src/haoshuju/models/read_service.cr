@@ -413,9 +413,14 @@ module Haoshuju
           rs << Read.new "http://eed3si9n.com/learning-scalaz/",
             title: "learning Scalaz — learning Scalaz",
             created_at: "2015-11-15 19:48"
+
           rs << Read.new "http://thesecretlivesofdata.com/raft/#home",
             title: "Raft",
             created_at: "2015-11-16 19:44"
+
+          rs << Read.new "https://softwaremill.com/comparing-akka-stream-scalaz-stream/",
+            title: "Comparing akka-stream and scalaz-stream with code examples",
+            created_at: "2015-11-17 21:00"
         end.reverse
       end
     end
