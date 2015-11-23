@@ -425,6 +425,10 @@ module Haoshuju
           rs << Read.new "https://blog.skcript.com/asynchronous-io-in-rust-36b623e7b965",
             title: "Asynchronous IO in Rust — Sudo vs Root — Medium",
             created_at: "2015-11-17 09:53"
+
+          rs << Read.new "https://blog.twitter.com/2015/building-distributedlog-twitter-s-high-performance-replicated-log-service",
+            title: "Building DistributedLog: Twitter’s high-performance replicated log service | Twitter Blogs",
+            created_at: "2015-11-23 23:25"
         end.reverse
       end
     end
