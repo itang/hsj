@@ -429,6 +429,10 @@ module Haoshuju
           rs << Read.new "https://blog.twitter.com/2015/building-distributedlog-twitter-s-high-performance-replicated-log-service",
             title: "Building DistributedLog: Twitter’s high-performance replicated log service | Twitter Blogs",
             created_at: "2015-11-23 23:25"
+
+          rs << Read.new "https://github.com/amfe/article/issues/24",
+            title: "vue+webpack在“双十一”导购产品的技术实践 · Issue #24 · amfe/article · GitHub",
+            created_at: "2015-11-24 23:35"
         end.reverse
       end
     end
