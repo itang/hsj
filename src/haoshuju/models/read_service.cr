@@ -437,6 +437,10 @@ module Haoshuju
           rs << Read.new "http://www.confluent.io/blog/apache-kafka-0.9-is-released",
             title: "Apache Kafka 0.9 is Released",
             created_at: "2015-11-25 13:21"
+
+          rs << Read.new "https://github.com/alibaba/jstorm/wiki/JStorm-Chinese-Documentation",
+            title: "JStorm Chinese Documentation · alibaba/jstorm Wiki · GitHub",
+            created_at: "2015-11-25 21:34"
         end.reverse
       end
     end
