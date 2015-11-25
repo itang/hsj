@@ -441,6 +441,10 @@ module Haoshuju
           rs << Read.new "https://github.com/alibaba/jstorm/wiki/JStorm-Chinese-Documentation",
             title: "JStorm Chinese Documentation · alibaba/jstorm Wiki · GitHub",
             created_at: "2015-11-25 21:34"
+
+          rs << Read.new "http://queue.acm.org/detail.cfm?id=2839461",
+            title: "Fail at Scale - ACM Queue",
+            created_at: "2015-11-25 21:43"
         end.reverse
       end
     end
