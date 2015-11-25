@@ -433,6 +433,10 @@ module Haoshuju
           rs << Read.new "https://github.com/amfe/article/issues/24",
             title: "vue+webpack在“双十一”导购产品的技术实践 · Issue #24 · amfe/article · GitHub",
             created_at: "2015-11-24 23:35"
+
+          rs << Read.new "http://www.confluent.io/blog/apache-kafka-0.9-is-released",
+            title: "Apache Kafka 0.9 is Released",
+            created_at: "2015-11-25 13:21"
         end.reverse
       end
     end
