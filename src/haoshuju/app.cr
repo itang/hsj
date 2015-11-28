@@ -9,6 +9,7 @@ module Haoshuju
     routes.draw do
       all "/", "welcome#index"
       get "/dicts", "dict#index"
+      get "/reads", "read#index"
       get "/_migrate", "tool#migrate!"
       get "/ping", "tool#ping"
       get "/test/timeout", "tool#timeout"
@@ -22,6 +23,7 @@ module Haoshuju
 
       register WelcomeController
       register DictController
+      register ReadController
       register ToolController
       register LangsController
       register CounterController

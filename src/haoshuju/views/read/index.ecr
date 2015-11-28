@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Haoshuju.net</title>
+  <link rel="stylesheet" href="/vendor/writ.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <h1>Haoshuju</h1>
+  <hr/>
+  <h2>待读列表</h2>
+  <table>
+    <% reads.each do |read| %>
+    <tr>
+      <td><%= read.title %></td>
+      <td><a href="<%= read.url %>" target="_blank"><%= read.url %></a></td>
+      <td width="100px">
+        <span style='color:<%= read.status.to_s == "Readed" ? "gray" : "green" %>'><%= read.status %></span>
+      </td>
+      <td><%= read.created_at %></td>
+    </tr>
+    <% end %>
+  </table>
+  <script src="/js/main.js"></script>
+  <footer>
+    <hr/>
+    <div>Version: <%= version %></div>
+  </footer>
+</body>
+</html>

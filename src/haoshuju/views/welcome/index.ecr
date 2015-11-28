@@ -110,9 +110,10 @@
       </div>
   </div>
 
-  <h2>待读</h2>
+  <h2>最新待读</h2>
+  <a href="/reads" target="_blank">更多</a>
   <table>
-    <% reads.each do |read| %>
+    <% reads.take(10).each do |read| %>
     <tr>
       <td><%= read.title %></td>
       <td><a href="<%= read.url %>" target="_blank"><%= read.url %></a></td>
