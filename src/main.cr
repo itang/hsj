@@ -6,15 +6,17 @@ require "./haoshuju/app"
 require "./haoshuju/middlewares"
 require "./haoshuju/utils"
 
+require "./haoshuju/runtime"
+
 include Haoshuju
 
 WD = Dir.working_directory
 PORT = ENV["PORT"]?.try &.to_i || 3000
-RUN_MODE = ENV["RUN_MODE"]? || "production" # development | production
+RUN_MODE = Runtime.run_mode # development | production
 APPPATH = File.expand_path($0)
 puts "$0: #{$0}, app_path: #{APPPATH}, work dir: #{WD}, port: #{PORT}, run mode: #{RUN_MODE}"
 
-if RUN_MODE == "development" || ENV["MOCK_REDIS"]? == "true"
+if Runtime.dev? || ENV["MOCK_REDIS"]? == "true"
   puts "INFO: Start mock Redis server..."
   fork do
     begin

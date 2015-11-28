@@ -1,5 +1,7 @@
 require "redis"
 
+require "../runtime"
+
 module Haoshuju::Models
   class PageCounter
     getter sum, daily
@@ -65,7 +67,12 @@ module Haoshuju::Models
 
     # TODO: 优化
     private def client
-      Redis.new
+      if Haoshuju::Runtime.dev?
+        Redis.new(host: "localhost", port: 6379)
+      else
+        # 设置访问密码. @NOTICE: 当前redis client 不支持设置password
+        Redis.new(host: "localhost", port: 6379)
+      end
 
       # Redis::Client.new
     end
