@@ -18,6 +18,8 @@ testFrameworks += new TestFramework("minitest.runner.Framework")
 
 enablePlugins(ScalaJSPlugin)
 
+skip in packageJSDependencies := true
+
 persistLauncher := true
 
 persistLauncher in Test := false
