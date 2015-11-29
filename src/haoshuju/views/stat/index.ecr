@@ -12,19 +12,23 @@
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+
   <h1>Haoshuju</h1>
   <hr/>
-  <h2>Counter</h2>
-  <div id="elm-main"></div>
+  <h2>每天访问计数</h2>
+  <div id="counter-app">
+    <table class="table">
+      <tr v-for="d in dayItems"><td v-text="d.day"></td><td v-text="d.number"></td></tr>
+    </table>
+  </div>
 
   <footer>
     <hr/>
     <div>Version: <%= version %></div>
   </footer>
-  <script src="/js/counter.js"></script>
-  <script>
-  var elmDiv = document.getElementById('elm-main')
-    , elmApp = Elm.embed(Elm.Counter, elmDiv);
-  </script>
+  <script src="/vendor/vue.js"></script>
+  <script src="/js/counter/hsj-jsdeps.min.js"></script>
+  <script src="/js/counter/hsj-opt.js"></script>
+  <script src="/js/counter/hsj-launcher.js"></script>
 </body>
 </html>

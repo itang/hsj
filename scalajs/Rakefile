@@ -1,0 +1,11 @@
+task :default do
+  sh 'rake -T'
+end
+
+desc "build"
+task :build do
+  sh 'sbt clean'
+  sh 'sbt fullOptJS'
+  sh 'cp target/scala-2.11/*.js ../assets/js/counter/'
+  sh 'cp target/scala-2.11/*.js.map ../assets/js/counter/'
+end

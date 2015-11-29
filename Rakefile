@@ -32,6 +32,11 @@ task :build => %w[main]
 desc 'build debug'
 task :build_debug => %w[main_debug]
 
+desc 'buildjs'
+task 'buildjs' do
+  sh 'cd scalajs;rake build'
+end
+
 desc 'run'
 task :run, [:mode] => %w[build_debug] do |_t, args|
   mode = args[:mode] || ENV['mode']
