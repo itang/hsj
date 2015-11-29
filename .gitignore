@@ -1,8 +1,7 @@
 .crystal/
 libs/
 .deps/
-main
-main_debug
+bin/
 
 .deps.lock
 

@@ -12,7 +12,7 @@ function start() {
   fi
 
   echo "start..."
-  nohup ./main >> logs/application.log 2>&1 &
+  nohup ./bin/hsj >> logs/application.log 2>&1 &
 }
 
 function stop() {

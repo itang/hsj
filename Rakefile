@@ -14,23 +14,25 @@ namespace :deps do
   end
 end
 
-file :main => (Dir["src/**/*.cr"] + Dir["src/**/*.ecr"]) do |t|
+directory "bin"
+
+file "bin/hsj" => (["bin"] + Dir["src/**/*.cr"] + Dir["src/**/*.ecr"]) do |t|
   puts "#{t.name} #{t.prerequisites.join(' ')}"
-  sh 'crystal build --release src/main.cr'
+  sh 'crystal build --release src/main.cr -o bin/hsj'
   File.write ".build", "#{Time.now}"
 end
 
-file :main_debug => (Dir["src/**/*.cr"] + Dir["src/**/*.ecr"]) do |t|
+file "bin/hsj_debug" => (["bin"] + Dir["src/**/*.cr"] + Dir["src/**/*.ecr"]) do |t|
   puts "#{t.name} #{t.prerequisites.join(' ')}"
-  sh 'crystal build src/main.cr -o main_debug'
+  sh 'crystal build src/main.cr -o bin/hsj_debug'
   File.write ".build", "#{Time.now}"
 end
 
 desc 'build'
-task :build => %w[main]
+task :build => "bin/hsj"
 
 desc 'build debug'
-task :build_debug => %w[main_debug]
+task :build_debug => "bin/hsj_debug"
 
 desc 'buildjs'
 task 'buildjs' do
@@ -41,15 +43,15 @@ desc 'run'
 task :run, [:mode] => %w[build_debug] do |_t, args|
   mode = args[:mode] || ENV['mode']
   if (mode || "").start_with? "d"
-    sh 'RUN_MODE=development MOCK_REDIS=true ./main_debug'
+    sh 'RUN_MODE=development MOCK_REDIS=true ./bin/hsj_debug'
   else
-    sh 'MOCK_REDIS=true ./main_debug'
+    sh 'MOCK_REDIS=true ./bin/hsj_debug'
   end
 end
 
 desc 'start'
 task :start => %w[build] do
-  sh './main'
+  sh './bin/hsj'
 end
 
 desc 'clean'
@@ -83,7 +85,7 @@ end
 desc 'upload binary'
 task :upload_binary => :build do
   sh 'scp .build itang@haoshuju.net:workspace/hsj/'
-  sh 'scp main itang@haoshuju.net:workspace/hsj/'
+  sh 'scp bin/hsj itang@haoshuju.net:workspace/hsj/bin/'
   sh "ssh itang@haoshuju.net 'cd workspace/hsj;git pull'"
 end
 
