@@ -1,7 +1,8 @@
 .crystal/
 libs/
 .deps/
-bin/
+bin/hsj
+bin/hsj_debug
 
 .deps.lock
 
