@@ -18,7 +18,9 @@
   <h2>每天访问计数</h2>
   <div id="counter-app">
     <table class="table">
-      <tr v-for="d in dayItems"><td v-text="d.day"></td><td v-text="d.number"></td></tr>
+      <tr v-for="d in dayItems">
+        <td v-text="d.day"></td>
+        <td v-text="d.number" v-bind:style="{ color: d.maxed ? 'red' : 'black'}"></td></tr>
     </table>
   </div>
 

@@ -4,7 +4,7 @@ end
 
 desc "build"
 task :build do
-  sh 'sbt clean'
+  #sh 'sbt clean'
   sh 'sbt fullOptJS'
   sh 'cp target/scala-2.11/*opt.* ../assets/js/counter/'
   sh 'cp target/scala-2.11/*launcher.js ../assets/js/counter/'
