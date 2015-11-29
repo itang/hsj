@@ -12,7 +12,7 @@ function start() {
   fi
 
   echo "start..."
-  nohup ./bin/hsj >> logs/application.log 2>&1 &
+  PORT=8000 nohup ./bin/hsj >> logs/application.log 2>&1 &
 }
 
 function stop() {
