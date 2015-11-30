@@ -445,6 +445,10 @@ module Haoshuju
           rs << Read.new "http://queue.acm.org/detail.cfm?id=2839461",
             title: "Fail at Scale - ACM Queue",
             created_at: "2015-11-25 21:43"
+
+          rs << Read.new "http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=401389590&idx=1&sn=63c1d56ebea7a128c6b560c4562aa2a8#rd",
+            title: "浅析时间序列用户生命周期的聚类方法",
+            created_at: "2015-11-30 10:39"
         end.reverse
       end
     end
