@@ -449,6 +449,10 @@ module Haoshuju
           rs << Read.new "http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=401389590&idx=1&sn=63c1d56ebea7a128c6b560c4562aa2a8#rd",
             title: "浅析时间序列用户生命周期的聚类方法",
             created_at: "2015-11-30 10:39"
+
+          rs << Read.new "https://linux.cn/article-6658-1.html?utm_source=weibo&utm_medium=weibo",
+            title: "对抗拖库 —— Web 前端慢加密-技术 ◆ 学习|Linux.中国-开源社区",
+            created_at: "2015-11-30 10:44"
         end.reverse
       end
     end
