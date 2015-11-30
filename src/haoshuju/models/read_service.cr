@@ -453,6 +453,10 @@ module Haoshuju
           rs << Read.new "https://linux.cn/article-6658-1.html?utm_source=weibo&utm_medium=weibo",
             title: "对抗拖库 —— Web 前端慢加密-技术 ◆ 学习|Linux.中国-开源社区",
             created_at: "2015-11-30 10:44"
+
+          rs << Read.new "https://wiki.openjdk.java.net/display/Adoption/JDK+9+Outreach",
+            title: "JDK 9 Outreach - Adoption -&nbsp;OpenJDK Wiki",
+            created_at: "2015-11-30 21:53"
         end.reverse
       end
     end
