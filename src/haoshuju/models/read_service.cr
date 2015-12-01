@@ -457,6 +457,10 @@ module Haoshuju
           rs << Read.new "https://wiki.openjdk.java.net/display/Adoption/JDK+9+Outreach",
             title: "JDK 9 Outreach - Adoption -&nbsp;OpenJDK Wiki",
             created_at: "2015-11-30 21:53"
+
+          rs << Read.new "https://auth0.com/blog/2015/11/30/build-an-api-in-rust-with-jwt-authentication-using-nickelrs/",
+            title: "Build an API in Rust with JWT Authentication using Nickel.rs",
+            created_at: "2015-12-01 09:56"
         end.reverse
       end
     end
