@@ -461,6 +461,10 @@ module Haoshuju
           rs << Read.new "https://auth0.com/blog/2015/11/30/build-an-api-in-rust-with-jwt-authentication-using-nickelrs/",
             title: "Build an API in Rust with JWT Authentication using Nickel.rs",
             created_at: "2015-12-01 09:56"
+
+          rs << Read.new "http://drmingdrmer.github.io/tech/distributed/2015/11/11/paxos-slide.html",
+            title: "可靠分布式系统基础 Paxos 的直观解释",
+            created_at: "2015-12-06 20:21"
         end.reverse
       end
     end
