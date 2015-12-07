@@ -465,6 +465,10 @@ module Haoshuju
           rs << Read.new "http://drmingdrmer.github.io/tech/distributed/2015/11/11/paxos-slide.html",
             title: "可靠分布式系统基础 Paxos 的直观解释",
             created_at: "2015-12-06 20:21"
+
+          rs << Read.new "http://blog.premium-minds.com/akka-to-the-rescue/",
+            title: "Akka to the rescue • Premium Minds Blog",
+            created_at: "2015-12-07 13:06"
         end.reverse
       end
     end
