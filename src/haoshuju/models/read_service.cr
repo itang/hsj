@@ -469,6 +469,10 @@ module Haoshuju
           rs << Read.new "http://blog.premium-minds.com/akka-to-the-rescue/",
             title: "Akka to the rescue • Premium Minds Blog",
             created_at: "2015-12-07 13:06"
+
+          rs << Read.new "http://mariussoutier.com/blog/2015/12/06/playframework-2-4-dependency-injection-di/",
+            title: "Playframework 2.4 Dependency Injection (DI) &#124; Marius Soutier",
+            created_at: "2015-12-07 22:13"
         end.reverse
       end
     end
