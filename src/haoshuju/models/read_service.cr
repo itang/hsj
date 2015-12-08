@@ -473,6 +473,10 @@ module Haoshuju
           rs << Read.new "http://mariussoutier.com/blog/2015/12/06/playframework-2-4-dependency-injection-di/",
             title: "Playframework 2.4 Dependency Injection (DI) &#124; Marius Soutier",
             created_at: "2015-12-07 22:13"
+
+          rs << Read.new "http://racksburg.com/choosing-an-http-status-code/",
+            title: "Choosing an HTTP Status Code — Stop Making It Hard | Racksburg",
+            created_at: "2015-12-08 20:19"
         end.reverse
       end
     end
