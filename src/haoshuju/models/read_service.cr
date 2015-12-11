@@ -477,6 +477,10 @@ module Haoshuju
           rs << Read.new "http://racksburg.com/choosing-an-http-status-code/",
             title: "Choosing an HTTP Status Code — Stop Making It Hard | Racksburg",
             created_at: "2015-12-08 20:19"
+
+          rs << Read.new "http://engineering.wix.com/2015/12/10/scaling-to-100m-mysql-is-a-better-nosql/",
+            title: "Scaling to 100M: MySQL is a Better NoSQL | Wix Engineering",
+            created_at: "2015-12-11 23:38"
         end.reverse
       end
     end
