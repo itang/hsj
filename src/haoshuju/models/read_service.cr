@@ -481,6 +481,10 @@ module Haoshuju
           rs << Read.new "http://engineering.wix.com/2015/12/10/scaling-to-100m-mysql-is-a-better-nosql/",
             title: "Scaling to 100M: MySQL is a Better NoSQL | Wix Engineering",
             created_at: "2015-12-11 23:38"
+
+          rs << Read.new "https://medium.com/@ericdreichert/what-one-must-understand-to-be-productive-with-rust-e9e472116728#.u9ivbyult",
+            title: "What one must understand to be productive with Rust. — Medium",
+            created_at: "2015-12-18 18:00"
         end.reverse
       end
     end
