@@ -485,6 +485,10 @@ module Haoshuju
           rs << Read.new "https://medium.com/@ericdreichert/what-one-must-understand-to-be-productive-with-rust-e9e472116728#.u9ivbyult",
             title: "What one must understand to be productive with Rust. — Medium",
             created_at: "2015-12-18 18:00"
+
+          rs << Read.new "http://smallcultfollowing.com/babysteps/blog/2015/12/18/rayon-data-parallelism-in-rust/",
+            title: "Rayon: data parallelism in Rust - Baby Steps",
+            created_at: "2015-12-19 18:04"
         end.reverse
       end
     end
