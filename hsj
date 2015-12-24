@@ -1,0 +1,38 @@
+#!/bin/bash
+
+crystal --version
+
+function start() {
+  if [ -f app.pid ]; then
+    echo "app.pid exists! Don't start."
+    return
+  fi
+  if [ ! -d logs ]; then
+    mkdir logs
+  fi
+
+  echo "start..."
+  PORT=8000 nohup ./bin/hsj >> logs/application.log 2>&1 &
+}
+
+function stop() {
+  kill `cat app.pid` && rm app.pid && echo "stop."
+}
+
+function usage() {
+  echo "Usage:"
+  echo "hsj start|stop|restart"
+}
+
+function rebuild() {
+  rake build
+}
+
+case $1 in
+  start) start;;
+  stop) stop;;
+  restart) stop && start;;
+  rebuild) rebuild;;
+  rerun) rebuild; stop && start;;
+  *) usage;;
+esac
