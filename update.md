@@ -10,4 +10,8 @@ require "html_builder"
 
 =>
 
-creative.getContent()
+JSON.parse(..).as_h as
+
+=> app
+
+server = HTTP::Server.new "0.0.0.0", port, @http_handler
