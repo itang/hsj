@@ -10,7 +10,7 @@ require "./haoshuju/runtime"
 
 include Haoshuju
 
-WD = Dir.working_directory
+WD = Dir.current
 PORT = ENV["PORT"]?.try &.to_i || 3000
 RUN_MODE = Runtime.run_mode # development | production
 APPPATH = File.expand_path($0)

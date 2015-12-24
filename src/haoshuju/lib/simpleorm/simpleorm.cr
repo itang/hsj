@@ -18,7 +18,7 @@ module Haoshuju
         end
       end
 
-      def t(v, _type : T.class):T
+      def t(v, _type : T.class)#: T
         if v.is_a?(T)
           v
         end

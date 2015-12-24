@@ -2,7 +2,11 @@ version: 1.0
 shards:
   amethyst:
     github: Codcore/amethyst
-    commit: f532dae350092057973723c10caa63d2e5bde9d6
+    commit: 0a54e305e8100b04242f7e873c96950d0eee3567
+
+  html_builder:
+    github: crystal-lang/html_builder
+    version: 0.1.0
 
   mime:
     github: spalger/crystal-mime
@@ -10,7 +14,7 @@ shards:
 
   redis:
     github: stefanwille/crystal-redis
-    commit: 34290a6258959e310c3200148b7a6dffa924e104
+    commit: ec5cc8819bb7d4be39233b3fb710da3906f40691
 
   sqlite3:
     github: manastech/crystal-sqlite3
