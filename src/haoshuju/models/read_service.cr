@@ -489,6 +489,10 @@ module Haoshuju
           rs << Read.new "http://smallcultfollowing.com/babysteps/blog/2015/12/18/rayon-data-parallelism-in-rust/",
             title: "Rayon: data parallelism in Rust - Baby Steps",
             created_at: "2015-12-19 18:04"
+
+          rs << Read.new "http://www.infoq.com/cn/articles/recommendation-algorithm-overview-part01",
+            title: "推荐算法综述（一）",
+            created_at: "2015-12-25 13:18"
         end.reverse
       end
     end
