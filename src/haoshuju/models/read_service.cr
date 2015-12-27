@@ -493,6 +493,10 @@ module Haoshuju
           rs << Read.new "http://www.infoq.com/cn/articles/recommendation-algorithm-overview-part01",
             title: "推荐算法综述（一）",
             created_at: "2015-12-25 13:18"
+
+          rs << Read.new "http://natpryce.com/articles/000815.html",
+            title: "Mistaeks I Hav Made: Impressions of Kotlin",
+            created_at: "2015-12-27 21:02"
         end.reverse
       end
     end
