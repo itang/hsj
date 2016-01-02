@@ -497,6 +497,10 @@ module Haoshuju
           rs << Read.new "http://natpryce.com/articles/000815.html",
             title: "Mistaeks I Hav Made: Impressions of Kotlin",
             created_at: "2015-12-27 21:02"
+
+          rs << Read.new "http://os.phil-opp.com/remap-the-kernel.html",
+            title: "Remap the Kernel &middot; phil-opp's blog",
+            created_at: "2016-01-02 17:31"
         end.reverse
       end
     end
