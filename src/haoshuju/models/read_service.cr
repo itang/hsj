@@ -501,6 +501,11 @@ module Haoshuju
           rs << Read.new "http://os.phil-opp.com/remap-the-kernel.html",
             title: "Remap the Kernel &middot; phil-opp's blog",
             created_at: "2016-01-02 17:31"
+
+            rs << Read.new "https://github.com/shekhargulati/52-technologies-in-2016/blob/master/01-finatra/README.md",
+  title: "52-technologies-in-2016/README.md at master · shekhargulati/52-technologies-in-2016 · GitHub",
+  created_at: "2016-01-05 11:15"
+
         end.reverse
       end
     end
