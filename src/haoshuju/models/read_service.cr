@@ -509,6 +509,18 @@ module Haoshuju
           rs << Read.new "http://science.raphael.poss.name/rust-for-functional-programmers.html",
             title: "Rust for functional programmers",
             created_at: "2016-01-05 11:20"
+
+          rs << Read.new "http://yq.aliyun.com/articles/2237",
+            title: "mysql 高可用方案漫谈（一）-博客-云栖社区",
+            created_at: "2016-01-06 12:01"
+
+          rs << Read.new "http://yq.aliyun.com/articles/2238",
+            title: "mysql 高可用方案漫谈（二）-博客-云栖社区",
+            created_at: "2016-01-06 12:01"
+
+          rs << Read.new "http://yq.aliyun.com/articles/2239",
+            title: "mysql 主备复制下的可靠性漫谈（三）-博客-云栖社区",
+            created_at: "2016-01-06 12:02"
         end.reverse
       end
     end
