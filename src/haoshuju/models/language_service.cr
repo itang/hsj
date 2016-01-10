@@ -15,7 +15,7 @@ class LanguageService
       Language.new("Swift", url = ["http://swift.org"], 2),
       Language.new("Crystal", url = ["http://www.crystal-lang.org"], level = 2),
       Language.new("Elixir", url = ["http://www.elixir-lang.org"], level = -2),
-      Language.new("Go", url = ["http://www.golang.org"], level = -1),
+      Language.new("Go", url = ["http://www.golang.org"], level = 3),
       Language.new("Clojure", url = ["http://www.clojure.org"], level = -1)]
   end
 end

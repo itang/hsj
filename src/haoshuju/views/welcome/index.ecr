@@ -47,11 +47,26 @@
             </div>
             <div class="column">
               <div class="ui segment">
-                <h2>我的语言[1]</h2>
+                <h2>现任</h2>
                 <table>
                   <% languages.select {|x| x.level == 1}.each_with_index do |lang, index| %>
                     <tr>
                       <td class="level-1"><%= lang.name %></td>
+                      <td>
+                        <% lang.url.each do |u| %>
+                        <a href="<%= u %>" target="_blank"><%= u %></a>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </table>
+              </div>
+              <div class="ui segment">
+                <h2>旧情人</h2>
+                <table>
+                  <% languages.select {|x| x.level == 3}.each_with_index do |lang, index| %>
+                    <tr>
+                      <td class="level-s1"><%= lang.name %></td>
                       <td>
                         <% lang.url.each do |u| %>
                         <a href="<%= u %>" target="_blank"><%= u %></a>
