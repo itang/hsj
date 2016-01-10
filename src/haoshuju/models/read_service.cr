@@ -521,6 +521,10 @@ module Haoshuju
           rs << Read.new "http://yq.aliyun.com/articles/2239",
             title: "mysql 主备复制下的可靠性漫谈（三）-博客-云栖社区",
             created_at: "2016-01-06 12:02"
+
+          rs << Read.new "https://www.ustack.com/blog/kafka/",
+            title: "云平台搭建Kafka分布式消息队列服务 | UnitedStack有云",
+            created_at: "2016-01-10 11:05"
         end.reverse
       end
     end
