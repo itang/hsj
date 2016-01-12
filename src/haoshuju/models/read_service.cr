@@ -525,6 +525,10 @@ module Haoshuju
           rs << Read.new "https://www.ustack.com/blog/kafka/",
             title: "云平台搭建Kafka分布式消息队列服务 | UnitedStack有云",
             created_at: "2016-01-10 11:05"
+
+          rs << Read.new "http://gold.xitu.io/entry/56936f2d60b2c2974cdb48e7",
+            title: "稀土掘金：2016 atSwift 大会现场幻灯片、示例代码集合",
+            created_at: "2016-01-12 23:02"
         end.reverse
       end
     end
