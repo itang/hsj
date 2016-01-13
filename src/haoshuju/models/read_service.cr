@@ -529,6 +529,10 @@ module Haoshuju
           rs << Read.new "http://gold.xitu.io/entry/56936f2d60b2c2974cdb48e7",
             title: "稀土掘金：2016 atSwift 大会现场幻灯片、示例代码集合",
             created_at: "2016-01-12 23:02"
+
+            rs << Read.new "http://best-ruby.com/index.html",
+  title: "Introduction | Ruby Tricks, Idiomatic Ruby, Refactorings and Best Practices",
+  created_at: "2016-01-13 13:22"
         end.reverse
       end
     end
