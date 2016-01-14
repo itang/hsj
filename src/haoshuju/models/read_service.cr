@@ -533,6 +533,10 @@ module Haoshuju
           rs << Read.new "http://best-ruby.com/index.html",
             title: "Introduction | Ruby Tricks, Idiomatic Ruby, Refactorings and Best Practices",
             created_at: "2016-01-13 13:22"
+
+          rs << Read.new "https://linux.cn/article-6888-1.html?utm_source=weibo&utm_medium=weibo",
+            title: "最简明扼要的 Systemd 教程，只需十分钟-技术 ◆ 学习|Linux.中国-开源社区",
+            created_at: "2016-01-14 11:24"
         end.reverse
       end
     end
