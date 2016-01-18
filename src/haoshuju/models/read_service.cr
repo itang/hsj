@@ -545,6 +545,10 @@ module Haoshuju
           rs << Read.new "https://amplab.cs.berkeley.edu/benchmark/",
             title: "Big Data Benchmark",
             created_at: "2016-01-18 22:46"
+
+          rs << Read.new "http://36kr.com/p/5042290.html",
+            title: "从0到1：微信后台系统的演进之路_36氪",
+            created_at: "2016-01-18 23:07"
         end.reverse
       end
     end
