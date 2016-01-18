@@ -541,6 +541,10 @@ module Haoshuju
           rs << Read.new "https://www.gitbook.com/book/hintjens/scalable-c/details",
             title: "Scalable C (in progress)  - GitBook",
             created_at: "2016-01-18 13:46"
+
+          rs << Read.new "https://amplab.cs.berkeley.edu/benchmark/",
+            title: "Big Data Benchmark",
+            created_at: "2016-01-18 22:46"
         end.reverse
       end
     end
