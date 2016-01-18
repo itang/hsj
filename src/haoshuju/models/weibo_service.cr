@@ -27,7 +27,8 @@ module Haoshuju
           Weibo.new("cxr", "一直在做紧急的事，难得没有紧急的事时，你一定只想好好休息，没精力去做重要的事 ... 这导致：重.要.的.事.一.直.没.有.去.做.的.机.会."),
           Weibo.new("yuanyf", "前端技术栈（2015版）：React + Redux + ES6（Babel） + webpack + npm + jss + autoprefixer + eslint + Elemental UI + karma"),
           Weibo.new("dengcaoyuan", "不管是 Erlang 的 process，Go 的 goroutine，还是 Akka 的 actor，都超不过 CPU 核数的限制，终究是如何合理地利用 CPU 核的问题。遇到 io，要阻塞在最小的粒度，这些语言都做专门的处理，即在遇 io 让出 CPU，不管在语言（实际也是库）还是库层面。Akka 会用 actor 包装 nio ，由 event 消息做切换。"),
-          Weibo.new("dengcaoyuan", "其实最关键的是 nio 是由 event 驱动的，即，注册关心的 io channel 后，数据来了可以被 event “唤醒”。如果没有这个，或者操作系统或者底层库牢牢地绑死了 CPU，就都无能为力了。 Erlang 的 io 库也是专门写的，好让它由 event 驱动。")].reverse
+          Weibo.new("dengcaoyuan", "其实最关键的是 nio 是由 event 驱动的，即，注册关心的 io channel 后，数据来了可以被 event “唤醒”。如果没有这个，或者操作系统或者底层库牢牢地绑死了 CPU，就都无能为力了。 Erlang 的 io 库也是专门写的，好让它由 event 驱动。"),
+          Weibo.new("cxr", "每隔几年时间，都要停下脚步，好好思考：什么是对自己现阶段最重要的事。循著现在的路径一直往前，真的是你内心最想要的吗？继续下去自己真的有优势吗？快乐吗？... 如果这些答案都是 YES，就继续向前。否则就勇敢做出调整。... 编写人生也和编写代码一样，需要持续重构啊！")].reverse
       end
     end
   end
