@@ -56,7 +56,8 @@ end
 
 desc 'clean'
 task :clean do
-  sh 'rm main*'
+  sh 'rm bin/hsj*'
+  sh 'rm -rf .build'
 end
 
 desc 'mock'
