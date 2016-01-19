@@ -549,6 +549,10 @@ module Haoshuju
           rs << Read.new "http://36kr.com/p/5042290.html",
             title: "从0到1：微信后台系统的演进之路_36氪",
             created_at: "2016-01-18 23:07"
+
+          rs << Read.new "http://rubinius.com/2016/01/11/nil-is-not-null-and-other-tales/",
+            title: "Rubinius",
+            created_at: "2016-01-19 09:58"
         end.reverse
       end
     end
