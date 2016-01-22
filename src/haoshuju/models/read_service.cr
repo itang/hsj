@@ -557,6 +557,10 @@ module Haoshuju
           rs << Read.new "http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=408091245&idx=1&sn=4bb501acb220c83e1030fe31fae0ef21#rd",
             title: "揭秘全球最大的音乐平台Spotify的运维监控体系",
             created_at: "2016-01-19 23:09"
+
+          rs << Read.new "http://yq.aliyun.com/articles/2920",
+            title: "写日志的那些事儿-博客-云栖社区",
+            created_at: "2016-01-22 14:02"
         end.reverse
       end
     end
