@@ -16,7 +16,7 @@ module Haoshuju
 
     @counter_service = CounterService.new
 
-    private def initialize
+    protected def initialize
     end
 
     def self.instance
