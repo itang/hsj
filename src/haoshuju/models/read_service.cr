@@ -561,6 +561,10 @@ module Haoshuju
           rs << Read.new "http://yq.aliyun.com/articles/2920",
             title: "写日志的那些事儿-博客-云栖社区",
             created_at: "2016-01-22 14:02"
+
+          rs << Read.new "http://shipilev.net/blog/2016/arrays-wisdom-ancients/",
+            title: "Arrays of Wisdom of the Ancients",
+            created_at: "2016-01-26 19:56"
         end.reverse
       end
     end
