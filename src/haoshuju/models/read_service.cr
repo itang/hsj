@@ -565,6 +565,10 @@ module Haoshuju
           rs << Read.new "http://shipilev.net/blog/2016/arrays-wisdom-ancients/",
             title: "Arrays of Wisdom of the Ancients",
             created_at: "2016-01-26 19:56"
+
+          rs << Read.new "http://blog.rodeo.io/2016/01/24/kudu-as-a-more-flexible-kafka.html?v2",
+            title: "Apache Kudu as a More Flexible And Reliable Kafka-style Queue",
+            created_at: "2016-01-27 10:19"
         end.reverse
       end
     end
