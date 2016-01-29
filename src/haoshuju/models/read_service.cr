@@ -569,6 +569,10 @@ module Haoshuju
           rs << Read.new "http://blog.rodeo.io/2016/01/24/kudu-as-a-more-flexible-kafka.html?v2",
             title: "Apache Kudu as a More Flexible And Reliable Kafka-style Queue",
             created_at: "2016-01-27 10:19"
+
+          rs << Read.new "https://community.qingcloud.com/topic/336/%E4%B8%8B%E4%B8%80%E4%BB%A3%E8%B6%85%E5%A4%A7%E8%A7%84%E6%A8%A1%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5?from=timeline&isappinstalled=0",
+            title: "下一代超大规模软件定义网络技术实践 | 青云QingCloud 社区",
+            created_at: "2016-01-29 10:05"
         end.reverse
       end
     end
