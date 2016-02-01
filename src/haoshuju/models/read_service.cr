@@ -573,6 +573,10 @@ module Haoshuju
           rs << Read.new "https://community.qingcloud.com/topic/336/%E4%B8%8B%E4%B8%80%E4%BB%A3%E8%B6%85%E5%A4%A7%E8%A7%84%E6%A8%A1%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5?from=timeline&isappinstalled=0",
             title: "下一代超大规模软件定义网络技术实践 | 青云QingCloud 社区",
             created_at: "2016-01-29 10:05"
+
+          rs << Read.new "https://medium.com/@eugeniyoz/restful-api-in-rust-impressions-63250d611d15#.j4m56yd5b",
+            title: "Rust for Web — Medium",
+            created_at: "2016-02-01 23:20"
         end.reverse
       end
     end
