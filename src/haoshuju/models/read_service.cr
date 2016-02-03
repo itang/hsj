@@ -581,6 +581,10 @@ module Haoshuju
           rs << Read.new "http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=408594607&idx=1&sn=03a5f0bbed230ff726d85ac04bd5305e&scene=4",
             title: "详谈京东的商品搜索系统架构设计",
             created_at: "2016-02-03 09:05"
+
+          rs << Read.new "https://redislabs.com/blog/connecting-spark-and-redis#.VrFcznVSuko",
+            title: "Connecting Spark and Redis: A Detailed Look",
+            created_at: "2016-02-03 09:51:39"
         end.reverse
       end
     end
