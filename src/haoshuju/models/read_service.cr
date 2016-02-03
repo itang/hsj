@@ -577,6 +577,10 @@ module Haoshuju
           rs << Read.new "https://medium.com/@eugeniyoz/restful-api-in-rust-impressions-63250d611d15#.j4m56yd5b",
             title: "Rust for Web — Medium",
             created_at: "2016-02-01 23:20"
+
+          rs << Read.new "http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=408594607&idx=1&sn=03a5f0bbed230ff726d85ac04bd5305e&scene=4",
+            title: "详谈京东的商品搜索系统架构设计",
+            created_at: "2016-02-03 09:05"
         end.reverse
       end
     end
