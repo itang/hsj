@@ -585,6 +585,10 @@ module Haoshuju
           rs << Read.new "https://redislabs.com/blog/connecting-spark-and-redis#.VrFcznVSuko",
             title: "Connecting Spark and Redis: A Detailed Look",
             created_at: "2016-02-03 09:51:39"
+
+          rs << Read.new "http://blog.zgtm.de/1",
+            title: "blog.zgtm.de",
+            created_at: "2016-02-04 21:53"
         end.reverse
       end
     end
