@@ -589,6 +589,10 @@ module Haoshuju
           rs << Read.new "http://blog.zgtm.de/1",
             title: "blog.zgtm.de",
             created_at: "2016-02-04 21:53"
+
+          rs << Read.new "https://lihaoyi.github.io/post/StrategicScalaStylePrincipleofLeastPower.html",
+            title: "Strategic Scala Style: Principle of Least Power",
+            created_at: "2016-02-15 10:16"
         end.reverse
       end
     end
