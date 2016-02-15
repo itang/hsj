@@ -593,6 +593,10 @@ module Haoshuju
           rs << Read.new "https://lihaoyi.github.io/post/StrategicScalaStylePrincipleofLeastPower.html",
             title: "Strategic Scala Style: Principle of Least Power",
             created_at: "2016-02-15 10:16"
+
+          rs << Read.new "https://blog.abevoelker.com/why-i-dont-use-docker-much-anymore/",
+            title: "Why I don't use Docker much anymore - Abe Voelker",
+            created_at: "2016-02-15 10:30"
         end.reverse
       end
     end
