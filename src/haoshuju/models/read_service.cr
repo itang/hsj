@@ -590,6 +590,14 @@ module Haoshuju
             title: "blog.zgtm.de",
             created_at: "2016-02-04 21:53"
 
+          rs << Read.new "https://lihaoyi.github.io/post/StrategicScalaStylePrincipleofLeastPower.html",
+            title: "Strategic Scala Style: Principle of Least Power",
+            created_at: "2016-02-15 10:16"
+
+          rs << Read.new "https://blog.abevoelker.com/why-i-dont-use-docker-much-anymore/",
+            title: "Why I don't use Docker much anymore - Abe Voelker",
+            created_at: "2016-02-15 10:30"
+
           rs << Read.new "https://yq.aliyun.com/articles/5590?spm=5176.100238.yqhn2.2.djhcWz",
             title: "数据处理平台架构中的SMACK组合：Spark、Mesos、Akka、Cassandra以及Kafka-博客-云栖社区-阿里云",
             created_at: "2016-02-18 22:08"
