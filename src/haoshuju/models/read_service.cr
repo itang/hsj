@@ -601,6 +601,10 @@ module Haoshuju
           rs << Read.new "https://yq.aliyun.com/articles/5590?spm=5176.100238.yqhn2.2.djhcWz",
             title: "数据处理平台架构中的SMACK组合：Spark、Mesos、Akka、Cassandra以及Kafka-博客-云栖社区-阿里云",
             created_at: "2016-02-18 22:08"
+
+          rs << Read.new "http://smallcultfollowing.com/babysteps/blog/2016/02/19/parallel-iterators-part-1-foundations/",
+            title: "Parallel Iterators Part 1: Foundations - Baby Steps",
+            created_at: "2016-02-20 19:20"
         end.reverse
       end
     end
