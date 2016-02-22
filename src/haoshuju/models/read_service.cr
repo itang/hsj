@@ -605,6 +605,10 @@ module Haoshuju
           rs << Read.new "http://smallcultfollowing.com/babysteps/blog/2016/02/19/parallel-iterators-part-1-foundations/",
             title: "Parallel Iterators Part 1: Foundations - Baby Steps",
             created_at: "2016-02-20 19:20"
+
+          rs << Read.new "http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/",
+            title: "50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs",
+            created_at: "2016-02-22 17:41"
         end.reverse
       end
     end
