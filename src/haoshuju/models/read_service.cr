@@ -609,6 +609,10 @@ module Haoshuju
           rs << Read.new "http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/",
             title: "50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs",
             created_at: "2016-02-22 17:41"
+
+          rs << Read.new "http://stackoverflow.com/questions/500607/what-are-the-lesser-known-but-useful-data-structures",
+            title: "language agnostic - What are the lesser known but useful data structures? - Stack Overflow",
+            created_at: "2016-02-25 20:36"
         end.reverse
       end
     end
