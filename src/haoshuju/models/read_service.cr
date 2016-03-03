@@ -613,6 +613,14 @@ module Haoshuju
           rs << Read.new "http://stackoverflow.com/questions/500607/what-are-the-lesser-known-but-useful-data-structures",
             title: "language agnostic - What are the lesser known but useful data structures? - Stack Overflow",
             created_at: "2016-02-25 20:36"
+
+          rs << Read.new "http://weibo.com/ttarticle/p/show?id=2309403948698710187414",
+            title: "http://weibo.com/ttarticle/p/show?id=2309403948698710187414",
+            created_at: "2016-03-03 14:24"
+
+          rs << Read.new "http://smallcultfollowing.com/babysteps/blog/2016/03/02/nice-errors-in-lalrpop/",
+            title: "Nice errors in LALRPOP - Baby Steps",
+            created_at: "2016-03-03 14:24"
         end.reverse
       end
     end
