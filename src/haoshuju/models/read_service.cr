@@ -621,6 +621,10 @@ module Haoshuju
           rs << Read.new "http://smallcultfollowing.com/babysteps/blog/2016/03/02/nice-errors-in-lalrpop/",
             title: "Nice errors in LALRPOP - Baby Steps",
             created_at: "2016-03-03 14:24"
+
+          rs << Read.new "https://jacobmartins.com/2016/02/29/getting-started-with-oauth2-in-go/",
+            title: "Getting Started With OAuth2 In Go | Jacob Martin",
+            created_at: "2016-03-04 09:33"
         end.reverse
       end
     end
